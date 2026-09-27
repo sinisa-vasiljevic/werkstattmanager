@@ -1,4 +1,4 @@
-WERKSTATTMANAGER PWA 3.0.1
+WERKSTATTMANAGER PWA 4.1
 
 Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
@@ -15,4 +15,4 @@ Funktionsgeprüfte Wartungsversion 2.4.1: TÜV-Grenzen werden automatisch konsis
 
 Version 3.0.1 basiert auf der funktionsgeprüften 2.4.1 und ergänzt Fahrzeugkategorien, Klassen-Stundensätze, Richtzeiten je Klasse, Schnell-KVA und erzwungene PWA-Aktualisierung.
 
-Version 4.0: sichtbare Praxis-Fahrzeugdatenbank, Suche nach Hersteller/Modell/Baureihe/Motor, Übernahmevorschau, kompakte Fahrzeugkarten und vollständige Detailansicht.
+Version 4.1 FINAL: Praxisdatenbank mit Motorvarianten, sichtbarer Übernahme, Fahrzeugdetails und Sicherheitsabfragen.

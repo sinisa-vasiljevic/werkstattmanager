@@ -2,6 +2,8 @@
   "id": "./index.html",
   "name": "Werkstattmanager",
   "short_name": "Werkstatt",
+  "description": "Mobile Werkstatt-, Fahrzeug-, Kosten- und Praxisdatenverwaltung",
+  "lang": "de-DE",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
