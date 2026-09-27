@@ -2,8 +2,6 @@
   "id": "./index.html",
   "name": "Werkstattmanager",
   "short_name": "Werkstatt",
-  "description": "Fahrzeug-, Werkstatt-, Kosten- und Materialverwaltung",
-  "lang": "de-DE",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

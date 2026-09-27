@@ -14,3 +14,5 @@ Versionsanzeige im Header: WERKSTATTMANAGER v 2.1
 Funktionsgeprüfte Wartungsversion 2.4.1: TÜV-Grenzen werden automatisch konsistent gehalten.
 
 Version 3.0.1 basiert auf der funktionsgeprüften 2.4.1 und ergänzt Fahrzeugkategorien, Klassen-Stundensätze, Richtzeiten je Klasse, Schnell-KVA und erzwungene PWA-Aktualisierung.
+
+Version 4.0: sichtbare Praxis-Fahrzeugdatenbank, Suche nach Hersteller/Modell/Baureihe/Motor, Übernahmevorschau, kompakte Fahrzeugkarten und vollständige Detailansicht.
