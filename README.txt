@@ -1,4 +1,4 @@
-WERKSTATTMANAGER PWA 2.0
+WERKSTATTMANAGER PWA 2.1
 
 Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
