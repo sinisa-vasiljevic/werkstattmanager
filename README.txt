@@ -1,4 +1,4 @@
-WERKSTATTMANAGER PWA 2.1
+WERKSTATTMANAGER PWA 2.4.1
 
 Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
@@ -10,3 +10,5 @@ Vor späteren Updates immer unter Optionen ein Backup exportieren.
 Die Materialimport_Vorlage.csv kann direkt als Vorlage für den Materialimport verwendet werden.
 
 Versionsanzeige im Header: WERKSTATTMANAGER v 2.1
+
+Funktionsgeprüfte Wartungsversion 2.4.1: TÜV-Grenzen werden automatisch konsistent gehalten.
