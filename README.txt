@@ -1,18 +1,10 @@
-WERKSTATTMANAGER PWA
+WERKSTATTMANAGER PWA 2.0
 
-Dateien komplett auf GitHub Pages hochladen:
-- index.html
-- manifest.webmanifest
-- sw.js
-- icon-192.png
-- icon-512.png
-- apple-touch-icon.png
+Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
-iPhone-Installation:
-1. Seite in Safari öffnen.
-2. Teilen antippen.
-3. Zum Home-Bildschirm.
-4. Als Web-App öffnen aktivieren.
-5. Hinzufügen.
+Pflicht: index.html, manifest.webmanifest, sw.js, apple-touch-icon.png, icon-192.png, icon-512.png
 
-Wichtig: Vor Updates in der App unter Optionen ein Backup exportieren.
+Auf dem iPhone: Seite in Safari öffnen, Teilen, Zum Home-Bildschirm, Als Web-App öffnen, Hinzufügen.
+
+Vor späteren Updates immer unter Optionen ein Backup exportieren.
+Die Materialimport_Vorlage.csv kann direkt als Vorlage für den Materialimport verwendet werden.
