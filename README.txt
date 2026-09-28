@@ -21,4 +21,4 @@ Version 4.2 FINAL: KI-Rechercheauftrag, JSON-Prüfimport und Richtzeiten für al
 
 Version 4.2.3: sichtbarer roter Importweg und Parser für Backslash-Formate aus kopierten ChatGPT-Antworten.
 
-Version 4.3.0: KI-Richtzeiten werden fahrzeugspezifisch priorisiert und gespeichert. Neue Kundenkategorie Familie mit Rabatt ausschließlich auf Arbeitskosten. Material bleibt voll berechnet. Ertragsanzeige: positiv grün, null orange, Verlust rot.
+Version 4.3.1: Familien-Badge gelb/schwarz. Dauerhafter Kunden- und Familienrabatt ausschließlich auf Arbeitskosten. Zusätzlicher Auftragsrabatt ebenfalls nur Arbeit und auf vorhandene Arbeitskosten begrenzt. Materialkosten werden nie rabattiert. KI-Richtzeit bleibt erste Priorität.
