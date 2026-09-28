@@ -20,3 +20,5 @@ Version 4.1 FINAL: Praxisdatenbank mit Motorvarianten, sichtbarer Übernahme, Fa
 Version 4.2 FINAL: KI-Rechercheauftrag, JSON-Prüfimport und Richtzeiten für alle Leistungen.
 
 Version 4.2.3: sichtbarer roter Importweg und Parser für Backslash-Formate aus kopierten ChatGPT-Antworten.
+
+Version 4.3.0: KI-Richtzeiten werden fahrzeugspezifisch priorisiert und gespeichert. Neue Kundenkategorie Familie mit Rabatt ausschließlich auf Arbeitskosten. Material bleibt voll berechnet. Ertragsanzeige: positiv grün, null orange, Verlust rot.
