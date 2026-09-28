@@ -24,3 +24,5 @@ Version 4.2.3: sichtbarer roter Importweg und Parser für Backslash-Formate aus 
 Version 4.3.1: Familien-Badge gelb/schwarz. Dauerhafter Kunden- und Familienrabatt ausschließlich auf Arbeitskosten. Zusätzlicher Auftragsrabatt ebenfalls nur Arbeit und auf vorhandene Arbeitskosten begrenzt. Materialkosten werden nie rabattiert. KI-Richtzeit bleibt erste Priorität.
 
 Version 4.3.3: Kundenansicht mit verknüpften Fahrzeugen und Direktaktionen. WhatsApp beim Kunden wiederhergestellt. Kunde kann während der Fahrzeuganlage angelegt werden; Fahrzeugdaten werden zwischengespeichert und danach wiederhergestellt. Fahrzeug-Badges inklusive Familienfahrzeug zentralisiert.
+
+Version 4.3.4: Offene Kunden-Fahrzeug-Ablauflücken geschlossen. Fahrzeugentwurf wird in sessionStorage gesichert, X und Hintergrund führen zurück zum Entwurf, bewusstes Verwerfen ist doppelt bestätigt. Fahrzeugaktionen beim Kunden speichern aktuelle Kundendaten. WhatsApp nutzt die aktuelle Feldeingabe, wird dynamisch angezeigt und validiert die Rufnummer.
