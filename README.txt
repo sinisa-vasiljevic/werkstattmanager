@@ -36,3 +36,5 @@ Version 4.3.7: Leistungen im Auftragsformular werden stabil nach Leistungskatego
 Version 4.3.8: Getriebe-Workflow mit Getriebeart, Code, Oelspezifikation, Freigabe, Servicefuellmenge, Filter und Hinweisen. KI-Vorschlaege werden geprueft oder geaendert und erst nach Bestaetigung gespeichert. Getriebeoel wird in Liter, Filter in Stueck angelegt und Leistungen zugeordnet. Leistungen sind mit Nutzungspruefung und doppelter Abfrage loeschbar; alte Auftraege bleiben erhalten.
 
 Version 4.3.9: Getriebeart, Getriebetyp/Getriebefamilie und konkreter Getriebekennbuchstabe werden getrennt erfasst. Fahrzeug und KI-Prüfmaske zeigen den Identifikationsstatus rot, gelb oder grün. Materialübernahme bei fehlendem Kennbuchstaben erfordert eine zusätzliche Warnbestätigung. KI-Recherche fordert Familie und konkreten Kennbuchstaben ausdrücklich getrennt an.
+
+Version 4.3.10: Liqui-Moly-Produkte erst nach Bestaetigung der Getriebedaten. Aenderungen setzen die Freigabe zurueck. Produkt wird separat bestaetigt; ohne belastbaren Vorschlag wird nichts erfunden. Preis startet bei 0,00 Euro mit Warnung.
