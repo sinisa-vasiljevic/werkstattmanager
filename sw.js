@@ -1,4 +1,4 @@
-const CACHE='werkstattmanager-v4.2.1';
+const CACHE='werkstattmanager-v4.2.3';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS.map(url=>url+(url.includes('?')?'&':'?')+'v=301'))).catch(()=>caches.open(CACHE).then(cache=>cache.addAll(ASSETS))).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));

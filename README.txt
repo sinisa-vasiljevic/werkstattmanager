@@ -19,4 +19,4 @@ Version 4.1 FINAL: Praxisdatenbank mit Motorvarianten, sichtbarer Übernahme, Fa
 
 Version 4.2 FINAL: KI-Rechercheauftrag, JSON-Prüfimport und Richtzeiten für alle Leistungen.
 
-Version 4.2.1: KI-Import direkt im Recherchefenster, Fahrzeug bleibt ausgewählt und komplette KI-Antworten werden automatisch bereinigt.
+Version 4.2.3: sichtbarer roter Importweg und Parser für Backslash-Formate aus kopierten ChatGPT-Antworten.
