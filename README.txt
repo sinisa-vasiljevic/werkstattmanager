@@ -26,3 +26,5 @@ Version 4.3.1: Familien-Badge gelb/schwarz. Dauerhafter Kunden- und Familienraba
 Version 4.3.3: Kundenansicht mit verknüpften Fahrzeugen und Direktaktionen. WhatsApp beim Kunden wiederhergestellt. Kunde kann während der Fahrzeuganlage angelegt werden; Fahrzeugdaten werden zwischengespeichert und danach wiederhergestellt. Fahrzeug-Badges inklusive Familienfahrzeug zentralisiert.
 
 Version 4.3.4: Offene Kunden-Fahrzeug-Ablauflücken geschlossen. Fahrzeugentwurf wird in sessionStorage gesichert, X und Hintergrund führen zurück zum Entwurf, bewusstes Verwerfen ist doppelt bestätigt. Fahrzeugaktionen beim Kunden speichern aktuelle Kundendaten. WhatsApp nutzt die aktuelle Feldeingabe, wird dynamisch angezeigt und validiert die Rufnummer.
+
+Version 4.3.5: Materialmengen korrigiert. Nur eindeutig erkanntes Motoröl in Liter übernimmt die Fahrzeug-Ölfüllmenge; Ölfilter und andere Stückartikel starten mit Menge 1. Kundenaufträge verwenden einheitlich den aktuellen Stundensatz der Fahrzeugklasse. Bei bestehenden Aufträgen werden gespeicherter und aktueller Stundensatz sichtbar verglichen; beim erneuten Speichern gilt der aktuelle Fahrzeugklassen-Stundensatz.
