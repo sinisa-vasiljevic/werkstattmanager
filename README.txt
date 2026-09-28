@@ -18,3 +18,5 @@ Version 3.0.1 basiert auf der funktionsgeprüften 2.4.1 und ergänzt Fahrzeugkat
 Version 4.1 FINAL: Praxisdatenbank mit Motorvarianten, sichtbarer Übernahme, Fahrzeugdetails und Sicherheitsabfragen.
 
 Version 4.2 FINAL: KI-Rechercheauftrag, JSON-Prüfimport und Richtzeiten für alle Leistungen.
+
+Version 4.2.1: KI-Import direkt im Recherchefenster, Fahrzeug bleibt ausgewählt und komplette KI-Antworten werden automatisch bereinigt.
