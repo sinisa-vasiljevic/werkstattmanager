@@ -23,4 +23,4 @@ Version 4.2.3: sichtbarer roter Importweg und Parser für Backslash-Formate aus 
 
 Version 4.3.1: Familien-Badge gelb/schwarz. Dauerhafter Kunden- und Familienrabatt ausschließlich auf Arbeitskosten. Zusätzlicher Auftragsrabatt ebenfalls nur Arbeit und auf vorhandene Arbeitskosten begrenzt. Materialkosten werden nie rabattiert. KI-Richtzeit bleibt erste Priorität.
 
-Version 4.3.2: Fahrzeug-Badges zentralisiert. Familienkunden erscheinen in der Fahrzeugliste automatisch als Familienfahrzeug in Gelb mit schwarzer Schrift. Kundenfahrzeug bleibt grün, eigenes Fahrzeug rot. Rabatt- und KI-Richtzeitenlogik aus 4.3.1 bleibt unverändert.
+Version 4.3.3: Kundenansicht mit verknüpften Fahrzeugen und Direktaktionen. WhatsApp beim Kunden wiederhergestellt. Kunde kann während der Fahrzeuganlage angelegt werden; Fahrzeugdaten werden zwischengespeichert und danach wiederhergestellt. Fahrzeug-Badges inklusive Familienfahrzeug zentralisiert.
