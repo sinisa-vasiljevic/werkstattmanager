@@ -16,3 +16,5 @@ Funktionsgeprüfte Wartungsversion 2.4.1: TÜV-Grenzen werden automatisch konsis
 Version 3.0.1 basiert auf der funktionsgeprüften 2.4.1 und ergänzt Fahrzeugkategorien, Klassen-Stundensätze, Richtzeiten je Klasse, Schnell-KVA und erzwungene PWA-Aktualisierung.
 
 Version 4.1 FINAL: Praxisdatenbank mit Motorvarianten, sichtbarer Übernahme, Fahrzeugdetails und Sicherheitsabfragen.
+
+Version 4.2 FINAL: KI-Rechercheauftrag, JSON-Prüfimport und Richtzeiten für alle Leistungen.
