@@ -38,3 +38,6 @@ Version 4.3.8: Getriebe-Workflow mit Getriebeart, Code, Oelspezifikation, Freiga
 Version 4.3.9: Getriebeart, Getriebetyp/Getriebefamilie und konkreter Getriebekennbuchstabe werden getrennt erfasst. Fahrzeug und KI-Prüfmaske zeigen den Identifikationsstatus rot, gelb oder grün. Materialübernahme bei fehlendem Kennbuchstaben erfordert eine zusätzliche Warnbestätigung. KI-Recherche fordert Familie und konkreten Kennbuchstaben ausdrücklich getrennt an.
 
 Version 4.3.10: Liqui-Moly-Produkte erst nach Bestaetigung der Getriebedaten. Aenderungen setzen die Freigabe zurueck. Produkt wird separat bestaetigt; ohne belastbaren Vorschlag wird nichts erfunden. Preis startet bei 0,00 Euro mit Warnung.
+
+
+V4.3.11: Bereinigungs-, Zuordnungs- und Offline-Patch. Getriebezuordnung, KI-Import-Rollback, Leistungsfilter, Pflichtmaterialprüfung, historische Aufträge, Materialverknüpfungen, beschädigte Daten und Service Worker wurden abgesichert.
