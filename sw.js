@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='werkstattmanager-v4.3.11',PREFIX='werkstattmanager-',ASSETS=['./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];
+const CACHE='werkstattmanager-v4.3.12',PREFIX='werkstattmanager-',ASSETS=['./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];
 self.addEventListener('install',e=>e.waitUntil((async()=>{const c=await caches.open(CACHE),r=await Promise.allSettled(ASSETS.map(async u=>{const x=await fetch(u,{cache:'reload'});if(!x.ok)throw Error(u);await c.put(u,x)}));if(r[0].status!=='fulfilled')throw r[0].reason;await self.skipWaiting()})()));
 self.addEventListener('activate',e=>e.waitUntil((async()=>{const k=await caches.keys();await Promise.all(k.filter(x=>x.startsWith(PREFIX)&&x!==CACHE).map(x=>caches.delete(x)));await self.clients.claim()})()));
 async function idx(){const c=await caches.open(CACHE);return c.match('./index.html',{ignoreSearch:true})}
