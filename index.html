@@ -3,7 +3,7 @@
 <style>
 :root{--b:#0b63ce;--bg:#eef2f7;--card:#fff;--txt:#111827;--mut:#64748b;--red:#dc2626;--green:#059669;--vio:#6d28d9;--amber:#d97706}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--txt);padding-bottom:84px}header{position:sticky;top:0;z-index:20;background:#07111ff2;color:white;padding:calc(12px + env(safe-area-inset-top)) 16px 12px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 14px #0003}header small{color:#60a5fa;font-weight:800;letter-spacing:.12em}h1{font-size:20px;margin:2px 0}.wrap{max-width:900px;margin:auto;padding:16px}.tabs{position:fixed;bottom:0;left:0;right:0;z-index:30;display:grid;grid-template-columns:repeat(7,1fr);background:#fff;border-top:1px solid #dbe2ea;padding-bottom:env(safe-area-inset-bottom)}.tab{border:0;background:none;padding:9px 2px;font-size:10px;color:#64748b}.tab b{display:block;font-size:19px}.tab.on{color:var(--b)}button{font:inherit}.btn{border:0;border-radius:12px;padding:11px 14px;font-weight:750;background:#e7edf5;color:#1e293b}.primary{background:var(--b);color:#fff}.danger{background:#fee2e2;color:#991b1b}.wa{background:#10b981;color:white}.grid{display:grid;gap:12px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.card{background:var(--card);border-radius:18px;padding:16px;box-shadow:0 2px 12px #0f172a0d;margin-bottom:12px}.card h3{margin:0 0 5px}.muted{color:var(--mut);font-size:13px}.big{font-size:24px;font-weight:850}.row{display:flex;gap:10px;align-items:center}.between{justify-content:space-between}.pill{display:inline-block;border-radius:99px;padding:5px 9px;font-size:11px;font-weight:800}.own{background:#ef4444;color:#fff}.cust{background:#39ff14;color:#07111f}.field{display:block;margin-bottom:12px}.field span{display:block;font-size:12px;font-weight:750;color:#475569;margin-bottom:5px}input,select,textarea{width:100%;border:1px solid #cbd5e1;border-radius:12px;padding:11px;background:white;font-size:16px}textarea{min-height:80px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:5px 0 12px}.section-title>.row{flex-wrap:wrap}.section-title .btn{max-width:100%}.section-title h2{margin:0}.hide{display:none!important}.modal{position:fixed;inset:0;z-index:50;background:#02061799;display:flex;align-items:flex-end}.sheet{background:#f8fafc;width:100%;max-height:94vh;overflow:auto;border-radius:24px 24px 0 0;padding:18px}.sheet-head{display:flex;justify-content:space-between;align-items:flex-start;background:#f8fafc;padding:4px 0 14px;z-index:2}.sheet-head h2{margin:0;line-height:1.15;max-width:calc(100% - 52px);overflow-wrap:anywhere}.x{border:0;background:#e2e8f0;border-radius:50%;width:36px;height:36px;font-size:20px}.tuv{border-left:5px solid}.black{border-color:#111827;background:#f1f5f9}.red{border-color:#ef4444;background:#fef2f2}.yellow{border-color:#f59e0b;background:#fffbeb}.green{border-color:#10b981;background:#ecfdf5}.search{margin-bottom:12px}.line{border-top:1px solid #e2e8f0;margin:12px 0}.check{display:flex;align-items:center;gap:10px;padding:12px;background:white;border-radius:12px;margin-bottom:7px}.check input{width:22px;height:22px}.notice{padding:12px;border-radius:12px;background:#eef2ff;color:#3730a3;font-size:13px}.error{background:#fee2e2;color:#991b1b}.success{background:#dcfce7;color:#166534}.costrow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #e2e8f0}.costrow:last-child{border:0}.order-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.material-head{min-width:0;flex:1}.material-actions{display:flex;gap:8px;flex-wrap:wrap}.material-actions .btn{white-space:nowrap}.vehicle-data{display:grid;grid-template-columns:minmax(116px,auto) 1fr;gap:7px 12px;font-size:14px}.vehicle-data b{white-space:nowrap}@media(max-width:430px){.material-actions{width:100%}.material-actions>*{flex:1}.vehicle-data{grid-template-columns:1fr}.vehicle-data b{margin-top:5px}}@media(min-width:700px){.g4{grid-template-columns:repeat(4,1fr)}.sheet{max-width:650px;margin:auto;border-radius:24px}.modal{align-items:center;padding:18px}.tabs{position:sticky;bottom:0;max-width:900px;margin:auto;border-radius:16px 16px 0 0}}
 .family{background:#ffd400;color:#111827}
-</style></head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.12</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
+</style></head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.13</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
 <script>
 const KEY='werkstattmanager-pwa-v1';const safeClone=value=>typeof globalThis.structuredClone==='function'?globalThis.structuredClone(value):JSON.parse(JSON.stringify(value));
 const defaults={settings:{company:'Meine Werkstatt',hourlyRate:50,dueWindow:90,redDays:14,yellowDays:60,rounding:'none'},vehicleClasses:[{id:'vc_small',name:'Kleinwagen',hourlyRate:60,order:1},{id:'vc_compact',name:'Kompaktklasse',hourlyRate:65,order:2},{id:'vc_mid',name:'Mittelklasse',hourlyRate:70,order:3},{id:'vc_upper',name:'Oberklasse',hourlyRate:80,order:4},{id:'vc_suv',name:'SUV',hourlyRate:85,order:5},{id:'vc_van',name:'Van',hourlyRate:75,order:6},{id:'vc_transporter',name:'Transporter',hourlyRate:95,order:7},{id:'vc_other',name:'Sonstiges',hourlyRate:70,order:8}],customers:[],vehicles:[],categories:[{id:'cat_service',name:'Service'},{id:'cat_bremsen',name:'Bremsen'}],services:[{id:'s_oel',categoryId:'cat_service',name:'Ölwechsel mit Filter',price:70,partsCost:42},{id:'s_luft',categoryId:'cat_service',name:'Luftfilterwechsel',price:15,partsCost:8}],materials:[{id:'mat_oel',name:'Motoröl 5W-30',manufacturer:'',partNumber:'',approval:'VW 504 00 / 507 00',unit:'Liter',unitCost:10.99},{id:'mat_oelfilter',name:'Ölfilter',manufacturer:'MANN-FILTER',partNumber:'',approval:'',unit:'Stück',unitCost:9.50}],costCategories:[{id:'cc_service',name:'Service & Wartung'},{id:'cc_rep',name:'Reparatur'},{id:'cc_tuv',name:'TÜV / HU'},{id:'cc_reifen',name:'Reifen'},{id:'cc_vers',name:'Versicherung'},{id:'cc_steuer',name:'Kfz-Steuer'},{id:'cc_pflege',name:'Pflege & Zubehör'},{id:'cc_sonst',name:'Sonstiges'}],entries:[]};
@@ -404,6 +404,67 @@ const vr4311=validateRequiredMaterials;validateRequiredMaterials=function(){if(!
 const se4311=saveEntry;saveEntry=function(vid,eid=''){const old=eid?db.entries.find(e=>e.id===eid):null,h=(old?.items||[]).filter(i=>!db.services.some(s=>s.id===i.serviceId));const r=se4311(vid,eid);const u=db.entries.find(e=>e.id===eid);if(u&&h.length){u.items=[...(u.items||[]),...h.filter(i=>!(u.items||[]).some(x=>x.serviceId===i.serviceId))];u.serviceIds=[...new Set([...(u.serviceIds||[]),...h.map(i=>i.serviceId)])];try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}}return r};
 const sv4311=saveVehicle41;saveVehicle41=function(vid=''){const beforeIds=new Set(db.vehicles.map(v=>v.id));const family=document.getElementById('vtransfamily')?.value.trim().toUpperCase()||'',code=document.getElementById('vtranscode')?.value.trim().toUpperCase()||'',type=document.getElementById('vtranstype')?.value||normalizeTransmissionType(family);if(family&&code&&n4311(family)===n4311(code))return alert('Getriebefamilie und Kennbuchstabe dürfen nicht identisch sein.');sv4311(vid);const target=vid?vehicle(vid):db.vehicles.find(v=>!beforeIds.has(v.id));if(!target)return;target.transmission={...(target.transmission||{}),family,code,type};try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}};
 const ai4311=applyAiImport;applyAiImport=function(){const p=window.pendingAiImport,v=vehicle(p?.vid);if(!p||!v)return alert('Kein Fahrzeug für KI-Import.');const family=document.getElementById('aiTransFamily')?.value.trim().toUpperCase()||'',code=document.getElementById('aiTransCode')?.value.trim().toUpperCase()||'';if(family&&code&&n4311(family)===n4311(code))return alert('Getriebefamilie und Kennbuchstabe dürfen nicht identisch sein.');if(!confirm('Alle ausgewählten KI-Daten jetzt gemeinsam übernehmen?'))return;const before=safeClone(db);try{ai4311();sanitize4311();localStorage.setItem(KEY,JSON.stringify(db))}catch(err){db=before;localStorage.setItem(KEY,JSON.stringify(db));console.error(err);alert('KI-Import wurde vollständig zurückgesetzt.')}};
+
+
+/* v4.3.13 Datenkonsistenz- und Abbruchschutz-Patch */
+const saveVehicle4313Previous=saveVehicle41;
+saveVehicle41=function(vid=''){
+  const snapshot=safeClone(db);
+  const previousIds=new Set((db.vehicles||[]).map(v=>v.id));
+  const modal=document.querySelector('#modal');
+  const family=document.getElementById('vtransfamily')?.value.trim().toUpperCase()||'';
+  const code=document.getElementById('vtranscode')?.value.trim().toUpperCase()||'';
+  if(family&&code&&n4311(family)===n4311(code))return alert('Getriebefamilie und Kennbuchstabe dürfen nicht identisch sein.');
+  try{
+    saveVehicle4313Previous(vid);
+    const completed=modal&&modal.innerHTML==='';
+    const target=vid?vehicle(vid):(db.vehicles||[]).find(v=>!previousIds.has(v.id));
+    if(!completed||!target){
+      db=snapshot;
+      try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}
+      return;
+    }
+    target.transmission={...(target.transmission||{}),family,code,type:document.getElementById('vtranstype')?.value||target.transmission?.type||normalizeTransmissionType(family)};
+    localStorage.setItem(KEY,JSON.stringify(db));
+  }catch(err){
+    db=snapshot;
+    try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){}
+    console.error(err);
+    alert('Fahrzeug wurde nicht gespeichert. Alle Änderungen wurden zurückgesetzt.');
+  }
+};
+
+function recalculateHistoricalEntry4313(entry){
+  if(!entry)return;
+  entry.items=Array.isArray(entry.items)?entry.items:[];
+  entry.serviceIds=[...new Set(entry.items.map(i=>i.serviceId).filter(Boolean))];
+  entry.totalMinutes=entry.items.reduce((sum,i)=>sum+Math.max(0,Number(i.laborMinutes)||0),0);
+  if(entry.type==='own'){
+    entry.ownCost=Math.max(0,Number(entry.partsCost)||0)+Math.max(0,Number(entry.directCost)||0);
+    return;
+  }
+  const serviceTotal=entry.items.reduce((sum,i)=>sum+(Number(i.price)||0),0);
+  const labor=entry.totalMinutes/60*(Number(entry.rate)||0);
+  entry.total=Math.max(0,serviceTotal+labor+(Number(entry.markup)||0)-(Number(entry.discount)||0));
+  entry.profit=entry.total-(Number(entry.partsCost)||0);
+  const v=vehicle(entry.vehicleId);
+  if(v){
+    entry.text=`Hallo ${customer(v.customerId)?.name||''},\n\nfür Ihren ${v.make} ${v.model} habe ich folgendes Angebot erstellt:\n\n${entry.items.map(x=>'• '+x.name+': '+euro(Number(x.price)||0)).join('\n')}\nArbeitszeit: ${Math.floor(entry.totalMinutes/60)} Std. ${entry.totalMinutes%60} Min.\n\nGesamtpreis: ${euro(entry.total)}\n\nViele Grüße\n${db.settings.company}`;
+  }
+}
+const saveEntry4313Previous=saveEntry;
+saveEntry=function(vid,eid=''){
+  const old=eid?db.entries.find(e=>e.id===eid):null;
+  const historical=(old?.items||[]).filter(i=>!db.services.some(s=>s.id===i.serviceId));
+  const result=saveEntry4313Previous(vid,eid);
+  const updated=eid?db.entries.find(e=>e.id===eid):null;
+  if(updated&&historical.length){
+    updated.items=[...(updated.items||[]),...historical.filter(h=>!(updated.items||[]).some(i=>i.serviceId===h.serviceId))];
+    recalculateHistoricalEntry4313(updated);
+    try{localStorage.setItem(KEY,JSON.stringify(db))}catch(e){console.error(e)}
+  }
+  return result;
+};
 
 if('serviceWorker' in navigator){window.addEventListener('load',async()=>{let refreshing=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload()});let reg=await navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'});reg.update()})}render();
 </script></body></html>

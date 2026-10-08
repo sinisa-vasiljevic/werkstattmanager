@@ -1,4 +1,4 @@
-WERKSTATTMANAGER PWA 4.1
+WERKSTATTMANAGER PWA 4.3.13
 
 Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
@@ -9,7 +9,7 @@ Auf dem iPhone: Seite in Safari öffnen, Teilen, Zum Home-Bildschirm, Als Web-Ap
 Vor späteren Updates immer unter Optionen ein Backup exportieren.
 Die Materialimport_Vorlage.csv kann direkt als Vorlage für den Materialimport verwendet werden.
 
-Versionsanzeige im Header: WERKSTATTMANAGER v 2.1
+Versionsanzeige im Header: WERKSTATTMANAGER v 4.3.13
 
 Funktionsgeprüfte Wartungsversion 2.4.1: TÜV-Grenzen werden automatisch konsistent gehalten.
 
@@ -41,3 +41,5 @@ Version 4.3.10: Liqui-Moly-Produkte erst nach Bestaetigung der Getriebedaten. Ae
 
 
 V4.3.11: Bereinigungs-, Zuordnungs- und Offline-Patch. Getriebezuordnung, KI-Import-Rollback, Leistungsfilter, Pflichtmaterialprüfung, historische Aufträge, Materialverknüpfungen, beschädigte Daten und Service Worker wurden abgesichert.
+
+V4.3.13: Fahrzeug-/Getriebespeicherung gegen Abbruch und Teiländerungen abgesichert; historische gelöschte Leistungen werden nach Wiederherstellung vollständig neu berechnet; Service-Worker-Precache prüft jetzt alle Pflichtdateien; Offline-Text und Versionsangaben korrigiert.
