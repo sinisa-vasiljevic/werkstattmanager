@@ -53,3 +53,5 @@ Version 4.3.16: Fahrzeug-Loeschfunktion unter Fahrzeugdetails und Fahrzeug bearb
 
 
 Version 4.3.17: TÜV-Grenzwerte dauerhaft abgesichert (Rot kleiner/gleich Gelb kleiner/gleich Gesamtzeitraum). Manifest wieder in das Release-Paket aufgenommen. Fahrzeug-Löschfunktion aus 4.3.16 unverändert erhalten.
+
+Version 4.3.18: Kundenlöschung mit Fahrzeug- und Historienprüfung; mobile Fahrzeugaktionen korrigiert.

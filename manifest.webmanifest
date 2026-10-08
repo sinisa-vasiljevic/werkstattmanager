@@ -1,14 +1,12 @@
 {
   "name": "Werkstattmanager",
   "short_name": "Werkstatt",
-  "description": "Private Fahrzeug- und Werkstattverwaltung",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#eef2f7",
   "theme_color": "#0b63ce",
   "lang": "de-DE",
-  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "icon-192.png",
