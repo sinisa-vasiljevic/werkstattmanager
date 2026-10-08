@@ -1,4 +1,4 @@
-WERKSTATTMANAGER PWA 4.3.14
+WERKSTATTMANAGER PWA 4.3.15
 
 Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
@@ -9,7 +9,7 @@ Auf dem iPhone: Seite in Safari öffnen, Teilen, Zum Home-Bildschirm, Als Web-Ap
 Vor späteren Updates immer unter Optionen ein Backup exportieren.
 Die Materialimport_Vorlage.csv kann direkt als Vorlage für den Materialimport verwendet werden.
 
-Versionsanzeige im Header: WERKSTATTMANAGER v 4.3.14
+Versionsanzeige im Header: WERKSTATTMANAGER v 4.3.15
 
 Funktionsgeprüfte Wartungsversion 2.4.1: TÜV-Grenzen werden automatisch konsistent gehalten.
 
@@ -45,3 +45,5 @@ V4.3.11: Bereinigungs-, Zuordnungs- und Offline-Patch. Getriebezuordnung, KI-Imp
 V4.3.13: Fahrzeug-/Getriebespeicherung gegen Abbruch und Teiländerungen abgesichert; historische gelöschte Leistungen werden nach Wiederherstellung vollständig neu berechnet; Service-Worker-Precache prüft jetzt alle Pflichtdateien; Offline-Text und Versionsangaben korrigiert.
 
 V4.3.14: Historische Aufträge verwenden wieder vollständig dieselbe Arbeitsrabatt-Logik wie aktuelle Aufträge. Angebotstexte historischer Positionen zeigen Arbeitszeit und Herkunft statt eines falschen Positionspreises von 0,00 EUR. Der Service Worker prüft nun jede Pflichtdatei des Precache-Vorgangs. Cache und sichtbare Versionsnummer wurden auf 4.3.14 erhöht.
+
+V4.3.15: Reparatur des Offline-Starts. Sichtbare Startprüfung statt schwarzem Bildschirm, globaler Fehlerhinweis mit Kopierfunktion, gehärtete Alt-Daten-Normalisierung, Service-Worker ohne automatische Reload-Schleife, neuer Cache 4.3.15 und toleranter Precache für optionale Dateien.
