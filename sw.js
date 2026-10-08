@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='werkstattmanager-v4.3.15';
+const CACHE='werkstattmanager-v4.3.17';
 const PREFIX='werkstattmanager-';
 const CORE=['./index.html'];
 const OPTIONAL=['./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];

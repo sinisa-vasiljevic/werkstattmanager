@@ -5,7 +5,7 @@
 .family{background:#ffd400;color:#111827}
 </style>
 <style id="bootSafetyStyle">#bootSafety{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:#eef2f7;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}#bootSafety .boot-card{width:min(520px,100%);background:#fff;border-radius:20px;padding:22px;box-shadow:0 12px 40px #0f172a22}#bootSafety h2{margin:0 0 8px}#bootSafety p{color:#475569}#bootSafety button{border:0;border-radius:12px;padding:11px 14px;font-weight:750;background:#0b63ce;color:#fff;margin:6px 6px 0 0}#bootSafety button.secondary{background:#e7edf5;color:#1e293b}#bootSafetyDetails{white-space:pre-wrap;overflow-wrap:anywhere;font:12px ui-monospace,monospace;color:#991b1b;background:#fee2e2;border-radius:10px;padding:10px;max-height:180px;overflow:auto}.app-ready #bootSafety{display:none}</style>
-</head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.15</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><div id="bootSafety" role="status" aria-live="polite"><div class="boot-card"><h2>Werkstattmanager wird gestartet</h2><p id="bootSafetyText">Lokale Daten und Offline-Speicher werden geprüft.</p><div id="bootSafetyActions" style="display:none"><button onclick="location.reload()">Erneut starten</button><button class="secondary" onclick="window.WM_copyStartError()">Fehler kopieren</button></div><pre id="bootSafetyDetails" style="display:none"></pre></div></div><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
+</head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.17</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><div id="bootSafety" role="status" aria-live="polite"><div class="boot-card"><h2>Werkstattmanager wird gestartet</h2><p id="bootSafetyText">Lokale Daten und Offline-Speicher werden geprüft.</p><div id="bootSafetyActions" style="display:none"><button onclick="location.reload()">Erneut starten</button><button class="secondary" onclick="window.WM_copyStartError()">Fehler kopieren</button></div><pre id="bootSafetyDetails" style="display:none"></pre></div></div><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
 <script>
 (function(){
   var firstError='';
@@ -17,7 +17,7 @@
     if(details){details.textContent=firstError;details.style.display='block'}
     if(actions)actions.style.display='block';
   };
-  window.WM_copyStartError=async function(){var value='Werkstattmanager 4.3.15\n'+firstError;try{await navigator.clipboard.writeText(value);alert('Fehlerdetails kopiert.')}catch(e){prompt('Fehlerdetails kopieren:',value)}};
+  window.WM_copyStartError=async function(){var value='Werkstattmanager 4.3.17\n'+firstError;try{await navigator.clipboard.writeText(value);alert('Fehlerdetails kopiert.')}catch(e){prompt('Fehlerdetails kopieren:',value)}};
   window.addEventListener('error',function(e){window.WM_showStartError(e.error||e.message)});
   window.addEventListener('unhandledrejection',function(e){window.WM_showStartError(e.reason)});
   window.WM_markReady=function(){document.documentElement.classList.add('app-ready')};
@@ -67,7 +67,7 @@ function ordersPage(){return `<div class="section-title"><div><h2>Aufträge & Ko
 function costsPage(){let own=db.entries.filter(e=>e.type==='own'),cust=db.entries.filter(e=>e.type!=='own'),rev=cust.reduce((a,e)=>a+e.total,0),parts=cust.reduce((a,e)=>a+e.partsCost,0),prof=cust.reduce((a,e)=>a+e.profit,0),ownTotal=own.reduce((a,e)=>a+e.ownCost,0);let cats=db.costCategories.map(c=>({c,total:own.filter(e=>e.costCategoryId===c.id).reduce((a,e)=>a+e.ownCost,0),count:own.filter(e=>e.costCategoryId===c.id).length})).filter(x=>x.count).sort((a,b)=>b.total-a.total);return `<h2>Getrennte Kostenansicht</h2><div class="card"><h3 style="color:var(--b)">Kundenfahrzeuge</h3><div class="grid g3">${moneyStat('Umsatz',rev)}${moneyStat('Teile',parts)}${moneyStat('Ertrag',prof)}</div></div><div class="card"><h3 style="color:var(--vio)">Meine Fahrzeuge</h3><div class="grid g2">${moneyStat('Einträge',own.length,true)}${moneyStat('Gesamtkosten',ownTotal)}</div></div><div class="card"><h3>Kosten nach Kategorien</h3>${cats.map(x=>`<div class="costrow"><div><b>${esc(x.c.name)}</b><div class="muted">${x.count} Einträge</div></div><b>${euro(x.total)}</b></div>`).join('')||'<div class="muted">Noch keine kategorisierten Kosten.</div>'}</div>${db.vehicles.filter(v=>v.type==='own').map(v=>{let es=own.filter(e=>e.vehicleId===v.id);return `<div class="card"><div class="muted" style="color:var(--vio)"><b>EIGENES FAHRZEUG</b></div><h3>${esc(v.make)} ${esc(v.model)}</h3><div class="muted">${es.length} Einträge</div><div class="big">${euro(es.reduce((a,e)=>a+e.ownCost,0))}</div></div>`}).join('')}`}
 function moneyStat(l,n,count=false){return `<div class="notice"><div class="muted">${l}</div><b>${count?n:euro(n)}</b></div>`}
 function settingsPage(){let x=db.settings;return `<h2>Einstellungen</h2><div class="card"><label class="field"><span>Werkstattname</span><input value="${esc(x.company)}" onchange="setSetting('company',this.value)"></label><label class="field"><span>Standard-Stundenlohn</span><input type="number" value="${x.hourlyRate}" onchange="setSetting('hourlyRate',this.value)"></label></div><div class="card"><h3>TÜV-Farblogik</h3><p class="muted">Schwarz gilt automatisch nach Ablauf. Die übrigen Grenzen bestimmst du selbst.</p><div class="grid g2"><label class="field"><span>Rot bis Tage</span><input type="number" min="0" value="${x.redDays}" onchange="setSetting('redDays',this.value)"></label><label class="field"><span>Gelb bis Tage</span><input type="number" min="0" value="${x.yellowDays}" onchange="setSetting('yellowDays',this.value)"></label><label class="field"><span>Grün / Anzeige bis Tage</span><input type="number" min="0" value="${x.dueWindow}" onchange="setSetting('dueWindow',this.value)"></label></div><div class="notice">Beispiel: Rot 14, Gelb 60, Grün 90. Abgelaufen bleibt Schwarz.</div></div><div class="card"><h3>Kostenkategorien eigene Fahrzeuge</h3><p class="muted">Beim Kosteneintrag wählst du hier angelegte Kategorien aus, zum Beispiel TÜV / HU.</p><div class="row"><input id="newCostCat" placeholder="Neue Kostenkategorie" onkeydown="if(event.key==='Enter')addCostCategory()"><button class="btn primary" onclick="addCostCategory()">＋</button></div><div class="line"></div>${db.costCategories.map(c=>`<div class="costrow"><b>${esc(c.name)}</b><button class="btn danger" onclick="deleteCostCategory('${c.id}')">Löschen</button></div>`).join('')}</div><div class="card"><h3>Fahrzeugkategorien und Stundensätze</h3><p class="muted">Die Kategorie wird beim Fahrzeug fest hinterlegt. Richtzeit und Stundensatz werden später automatisch verwendet.</p>${db.vehicleClasses.map(c=>`<div class="costrow"><b>${esc(c.name)}</b><label style="width:145px"><input type="number" value="${c.hourlyRate}" onchange="setVehicleClassRate('${c.id}',this.value)"><small class="muted">€/Std.</small></label></div>`).join('')}</div><div class="card"><h3>Datensicherung</h3><button class="btn primary" style="width:100%" onclick="exportBackup()">Backup exportieren</button><label class="btn" style="display:block;text-align:center;margin-top:8px">Backup importieren<input type="file" accept=".json" hidden onchange="importBackup(this.files[0])"></label></div><button class="btn danger" onclick="resetApp()">App zurücksetzen</button>`}
-function setSetting(key,value){if(key==='company'){db.settings[key]=value;save();return}let n=Math.max(0,Number(value||0));db.settings[key]=n;if(key==='redDays'&&db.settings.yellowDays<n)db.settings.yellowDays=n;if((key==='redDays'||key==='yellowDays')&&db.settings.dueWindow<db.settings.yellowDays)db.settings.dueWindow=db.settings.yellowDays;if(key==='dueWindow'&&n<db.settings.yellowDays)db.settings.dueWindow=db.settings.yellowDays;save()}
+function setSetting(key,value){if(key==='company'){db.settings[key]=value;save();return}let n=Math.max(0,Number(value||0));if(key==='redDays'){db.settings.redDays=n;if(Number(db.settings.yellowDays)<n)db.settings.yellowDays=n;if(Number(db.settings.dueWindow)<Number(db.settings.yellowDays))db.settings.dueWindow=Number(db.settings.yellowDays)}else if(key==='yellowDays'){db.settings.yellowDays=Math.max(n,Number(db.settings.redDays||0));if(Number(db.settings.dueWindow)<Number(db.settings.yellowDays))db.settings.dueWindow=Number(db.settings.yellowDays)}else if(key==='dueWindow'){db.settings.dueWindow=Math.max(n,Number(db.settings.yellowDays||0),Number(db.settings.redDays||0))}else{db.settings[key]=n}save();if(key==='redDays'||key==='yellowDays'||key==='dueWindow')render()}
 function setVehicleClassRate(id,value){db.vehicleClasses=db.vehicleClasses.map(c=>c.id===id?{...c,hourlyRate:Math.max(0,Number(value||0))}:c);save()}
 function filterCards(q){document.querySelectorAll('.searchable').forEach(el=>el.classList.toggle('hide',!el.innerText.toLowerCase().includes(q.toLowerCase())))}
 function showModal(title,body){document.querySelector('#modal').innerHTML=`<div class="modal" onclick="if(event.target===this)closeModal()"><div class="sheet"><div class="sheet-head"><h2>${title}</h2><button class="x" onclick="closeModal()">×</button></div>${body}</div></div>`} function closeModal(){document.querySelector('#modal').innerHTML=''}
@@ -511,6 +511,57 @@ saveEntry=function(vid,eid=''){
   return result;
 };
 
+/* v4.3.16: Fahrzeug loeschen wiederhergestellt und abgesichert. */
+function deleteVehicle4316(vid){
+  const v=vehicle(vid);
+  if(!v)return alert('Fahrzeug wurde nicht gefunden.');
+  const linkedEntries=(db.entries||[]).filter(e=>e.vehicleId===vid);
+  const label=[v.make,v.model,v.plate?('('+v.plate+')'):''].filter(Boolean).join(' ');
+  const impact=linkedEntries.length
+    ? `\n\nVorhandene Auftraege/Kosteneintraege: ${linkedEntries.length}\nDiese Eintraege bleiben aus Nachweisgruenden erhalten und werden danach als „Fahrzeug geloescht“ angezeigt.`
+    : '\n\nFuer dieses Fahrzeug sind keine Auftraege oder Kosteneintraege gespeichert.';
+  if(!confirm(`Fahrzeug wirklich loeschen?\n\n${label}${impact}`))return;
+  const word=prompt(`Endgueltige Bestaetigung fuer:\n${label}\n\nGib exakt LOESCHEN ein.`);
+  if(word!=='LOESCHEN')return alert('Loeschen abgebrochen. Das Fahrzeug wurde nicht veraendert.');
+  db.vehicles=(db.vehicles||[]).filter(x=>x.id!==vid);
+  save();
+  closeModal();
+  tab='vehicles';
+  render();
+  alert(linkedEntries.length
+    ? `Fahrzeug geloescht. ${linkedEntries.length} vorhandene Auftraege/Kosteneintraege wurden beibehalten.`
+    : 'Fahrzeug geloescht.');
+}
+const editVehicleBefore4316=editVehicle41;
+editVehicle41=function(vid='',presetCustomerId=''){
+  editVehicleBefore4316(vid,presetCustomerId);
+  if(!vid||!vehicle(vid)||document.getElementById('deleteVehicleButton4316'))return;
+  const sheet=document.querySelector('#modal .sheet');
+  if(!sheet)return;
+  const button=document.createElement('button');
+  button.id='deleteVehicleButton4316';
+  button.type='button';
+  button.className='btn danger';
+  button.style.cssText='width:100%;margin-top:12px';
+  button.textContent='Fahrzeug loeschen';
+  button.onclick=()=>deleteVehicle4316(vid);
+  sheet.appendChild(button);
+};
+const vehicleDetailsBefore4316=vehicleDetails;
+vehicleDetails=function(vid){
+  vehicleDetailsBefore4316(vid);
+  if(!vehicle(vid)||document.getElementById('deleteVehicleDetails4316'))return;
+  const sheet=document.querySelector('#modal .sheet');
+  if(!sheet)return;
+  const button=document.createElement('button');
+  button.id='deleteVehicleDetails4316';
+  button.type='button';
+  button.className='btn danger';
+  button.style.cssText='width:100%;margin-top:8px';
+  button.textContent='Fahrzeug loeschen';
+  button.onclick=()=>deleteVehicle4316(vid);
+  sheet.appendChild(button);
+};
 async function registerServiceWorker4315(){
  if(!('serviceWorker' in navigator))return;
  try{const reg=await navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'});await reg.update()}catch(err){console.warn('Service Worker konnte nicht aktualisiert werden:',err)}

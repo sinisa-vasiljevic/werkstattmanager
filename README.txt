@@ -1,4 +1,4 @@
-WERKSTATTMANAGER PWA 4.3.15
+WERKSTATTMANAGER PWA 4.3.16
 
 Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
@@ -9,7 +9,7 @@ Auf dem iPhone: Seite in Safari öffnen, Teilen, Zum Home-Bildschirm, Als Web-Ap
 Vor späteren Updates immer unter Optionen ein Backup exportieren.
 Die Materialimport_Vorlage.csv kann direkt als Vorlage für den Materialimport verwendet werden.
 
-Versionsanzeige im Header: WERKSTATTMANAGER v 4.3.15
+Versionsanzeige im Header: WERKSTATTMANAGER v 4.3.16
 
 Funktionsgeprüfte Wartungsversion 2.4.1: TÜV-Grenzen werden automatisch konsistent gehalten.
 
@@ -46,4 +46,10 @@ V4.3.13: Fahrzeug-/Getriebespeicherung gegen Abbruch und Teiländerungen abgesic
 
 V4.3.14: Historische Aufträge verwenden wieder vollständig dieselbe Arbeitsrabatt-Logik wie aktuelle Aufträge. Angebotstexte historischer Positionen zeigen Arbeitszeit und Herkunft statt eines falschen Positionspreises von 0,00 EUR. Der Service Worker prüft nun jede Pflichtdatei des Precache-Vorgangs. Cache und sichtbare Versionsnummer wurden auf 4.3.14 erhöht.
 
-V4.3.15: Reparatur des Offline-Starts. Sichtbare Startprüfung statt schwarzem Bildschirm, globaler Fehlerhinweis mit Kopierfunktion, gehärtete Alt-Daten-Normalisierung, Service-Worker ohne automatische Reload-Schleife, neuer Cache 4.3.15 und toleranter Precache für optionale Dateien.
+V4.3.16: Reparatur des Offline-Starts. Sichtbare Startprüfung statt schwarzem Bildschirm, globaler Fehlerhinweis mit Kopierfunktion, gehärtete Alt-Daten-Normalisierung, Service-Worker ohne automatische Reload-Schleife, neuer Cache 4.3.16 und toleranter Precache für optionale Dateien.
+
+
+Version 4.3.16: Fahrzeug-Loeschfunktion unter Fahrzeugdetails und Fahrzeug bearbeiten wiederhergestellt. Auftraege bleiben als historische Nachweise erhalten.
+
+
+Version 4.3.17: TÜV-Grenzwerte dauerhaft abgesichert (Rot kleiner/gleich Gelb kleiner/gleich Gesamtzeitraum). Manifest wieder in das Release-Paket aufgenommen. Fahrzeug-Löschfunktion aus 4.3.16 unverändert erhalten.
