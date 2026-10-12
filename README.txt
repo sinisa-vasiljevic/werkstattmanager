@@ -59,3 +59,10 @@ Version 4.3.18: Kundenlöschung mit Fahrzeug- und Historienprüfung; mobile Fahr
 Version 4.3.24: Echte PDF-Datei per Teilen/Drucken, VIN eigene Zeile, mobile Einspalten-Darstellung, Materialvorschau mit Einzelliste und strikte Getriebeöl-Sicherheitsprüfung. Getriebeöle werden niemals automatisch zugeordnet.
 
 Version 4.3.26: Fahrzeugzentrale mit Übersicht, Aufträgen, Wartung, Material, Dokumenten und Fahrzeugdaten.
+
+Version 4.3.28:
+- Erweiterter KI-Rechercheauftrag mit OEM-/Aggregathersteller-/LIQUI-MOLY-Quellenhierarchie.
+- Materialien aus Recherche werden strikt nur dem recherchierten Fahrzeug zugeordnet.
+- Getriebeöl und Filter werden bei eindeutiger Identifikation automatisch angelegt/aktualisiert.
+- Keine pauschale 1-Liter-Menge; unbekannte Menge bleibt unbekannt.
+- Servicefüllmenge kann manuell mit Quelle/Hinweis gespeichert werden und wird bei erneuter Recherche nicht automatisch überschrieben.
