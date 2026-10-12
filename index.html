@@ -10,7 +10,7 @@
 @media (min-width:430px){.vehicle-type-btn{font-size:15px;padding:10px 6px}}
 </style>
 <style id="bootSafetyStyle">#bootSafety{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:#eef2f7;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}#bootSafety .boot-card{width:min(520px,100%);background:#fff;border-radius:20px;padding:22px;box-shadow:0 12px 40px #0f172a22}#bootSafety h2{margin:0 0 8px}#bootSafety p{color:#475569}#bootSafety button{border:0;border-radius:12px;padding:11px 14px;font-weight:750;background:#0b63ce;color:#fff;margin:6px 6px 0 0}#bootSafety button.secondary{background:#e7edf5;color:#1e293b}#bootSafetyDetails{white-space:pre-wrap;overflow-wrap:anywhere;font:12px ui-monospace,monospace;color:#991b1b;background:#fee2e2;border-radius:10px;padding:10px;max-height:180px;overflow:auto}.app-ready #bootSafety{display:none}</style>
-</head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.41</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><div id="bootSafety" role="status" aria-live="polite"><div class="boot-card"><h2>Werkstattmanager wird gestartet</h2><p id="bootSafetyText">Lokale Daten und Offline-Speicher werden geprüft.</p><div id="bootSafetyActions" style="display:none"><button onclick="location.reload()">Erneut starten</button><button class="secondary" onclick="window.WM_copyStartError()">Fehler kopieren</button></div><pre id="bootSafetyDetails" style="display:none"></pre></div></div><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
+</head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.43</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><div id="bootSafety" role="status" aria-live="polite"><div class="boot-card"><h2>Werkstattmanager wird gestartet</h2><p id="bootSafetyText">Lokale Daten und Offline-Speicher werden geprüft.</p><div id="bootSafetyActions" style="display:none"><button onclick="location.reload()">Erneut starten</button><button class="secondary" onclick="window.WM_copyStartError()">Fehler kopieren</button></div><pre id="bootSafetyDetails" style="display:none"></pre></div></div><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
 <script>
 (function(){
   var firstError='';
@@ -22,7 +22,7 @@
     if(details){details.textContent=firstError;details.style.display='block'}
     if(actions)actions.style.display='block';
   };
-  window.WM_copyStartError=async function(){var value='Werkstattmanager 4.3.41\n'+firstError;try{await navigator.clipboard.writeText(value);alert('Fehlerdetails kopiert.')}catch(e){prompt('Fehlerdetails kopieren:',value)}};
+  window.WM_copyStartError=async function(){var value='Werkstattmanager 4.3.43\n'+firstError;try{await navigator.clipboard.writeText(value);alert('Fehlerdetails kopiert.')}catch(e){prompt('Fehlerdetails kopieren:',value)}};
   window.addEventListener('error',function(e){window.WM_showStartError(e.error||e.message)});
   window.addEventListener('unhandledrejection',function(e){window.WM_showStartError(e.reason)});
   window.WM_markReady=function(){document.documentElement.classList.add('app-ready')};
@@ -960,7 +960,19 @@ GETRIEBE
 Ermittle Getriebeart, Hersteller, Getriebefamilie und konkreten Getriebecode. Ermittle die Spezifikation des Getriebeöls, die OEM-Freigabe, Ölwechselmenge beziehungsweise Servicefüllmenge, Gesamt- beziehungsweise Trockenfüllmenge, Getriebeölfilter, Ölwanne, Dichtung, Temperaturfenster und Wechselmethode.
 
 LIQUI MOLY VERPFLICHTEND PRÜFEN
-Prüfe den LIQUI MOLY Ölwegweiser für Motor und Getriebe anhand aller vorhandenen Fahrzeugdaten. Übernimm die dort angegebene Ölwechselmenge des Getriebes im Feld serviceFillLiters des Getriebeöl-Objekts. Übernimm eine angegebene Gesamtfüllmenge im Feld dryFillLiters des Getriebeöl-Objekts. Verlange für die Ölwechselmenge von LIQUI MOLY keine zweite Quelle. Eine eindeutige fahrzeugspezifische LIQUI-MOLY-Angabe reicht für confidence medium. Nenne die LIQUI-MOLY-Seite als Quelle. Falls mehrere Getriebevarianten möglich sind, gib jede plausible Variante mit eigener Ölwechselmenge als Alternative aus und erkläre die Zuordnung. Produkt-Gebindegröße niemals als Füllmenge verwenden.
+Nutze den LIQUI MOLY Ölwegweiser als Pflichtquelle für die Füllmengen von Motor und Getriebe. Wähle dort exakt das Fahrzeug anhand von Hersteller, Modell, Baureihe, Baujahr, Motor, Leistung und vorhandenen Codes aus.
+
+Öffne nach der Fahrzeugauswahl die Ergebnisansicht. Prüfe die Produktkarten für Motoröl und Getriebeöl vollständig. Scrolle in jeder passenden Produktkarte bis zum Abschnitt Füllmenge. Suche ausdrücklich nach der Bezeichnung Servicebefüllung beziehungsweise Ölwechselmenge. Übernimm nur diese fahrzeugbezogene Literangabe. Eine zusätzlich angezeigte Trockenfüllung wird ignoriert.
+
+Übernimm ausschließlich die Servicebefüllung beziehungsweise Ölwechselmenge. Trockenfüllungen sind für diese Werkstatt nicht relevant und dürfen weder recherchiert noch ausgegeben, importiert oder als Materialbedarf verwendet werden. Für das Getriebe kommt die Servicebefüllung in das Feld serviceFillLiters. Für den Motor kommt ein einzelner Servicewert in capacityWithFilterLiters. Wenn LIQUI MOLY einen Bereich nennt, gib zusätzlich capacityMinLiters und capacityMaxLiters aus und bewahre den vollständigen Bereich in capacityText auf.
+
+Verwechsle Fahrzeugfüllmengen niemals mit den Gebindegrößen bei den Artikelnummern. Angaben wie 1 Liter, 5 Liter, 20 Liter, 60 Liter oder 205 Liter neben einer Artikelnummer sind nur Verkaufsgebinde.
+
+Eine eindeutige fahrzeugspezifische Angabe im LIQUI MOLY Ölwegweiser reicht als Quelle und erhält confidence medium. Eine zweite Quelle ist dafür nicht erforderlich. Nenne die konkrete LIQUI-MOLY-Ergebnisseite als Quelle.
+
+Falls die dynamische Ergebnisansicht technisch nicht gelesen werden kann, darfst du nicht behaupten, LIQUI MOLY nenne keine Füllmenge. Setze dann quantityAccessStatus auf dynamicPageUnavailable und erkläre die technische Zugriffsbeschränkung in uncertainties. Suche zusätzlich mit Hersteller, Modell, Motor, Getriebe und den Begriffen LIQUI MOLY, Füllmenge, Trockenfüllung und Servicebefüllung. Nur wenn die Ergebnisseite zugänglich ist und dort tatsächlich keine Menge steht, darf quantityAccessStatus den Wert notListed erhalten.
+
+Falls mehrere Motor- oder Getriebevarianten möglich sind, gib jede plausible Variante mit eigener Füllmenge und Zuordnungsbegründung als Alternative aus.
 
 KANDIDATEN UND MARKEN
 Gib für Motoröl, Getriebeöl und jede Filterart einen bevorzugten Treffer sowie plausible Alternativen aus. Bewerte zuerst die Fahrzeugpassung, danach die Marke. Bei gleich guter Filterpassung MANN-FILTER bevorzugen. Falls kein passender MANN-FILTER verfügbar ist, MAHLE/KNECHT, Hengst, Bosch, Purflux, UFI oder einen anderen namhaften Hersteller verwenden. Bei Ölen entscheiden zuerst Spezifikation und OEM-Freigabe; danach Produkte namhafter Hersteller. Treffer mit confidence high, medium oder low nicht unterdrücken, sondern kurz begründen.
@@ -974,13 +986,13 @@ ${services.map(x=>`serviceId: ${x.serviceId}\nKategorie: ${x.category}\nLeistung
 ANTWORTFORMAT
 Antworte nur mit gültigem JSON, ohne Markdown und ohne Begleittext. schemaVersion ist 1.
 
-Hauptfelder: schemaVersion, vehicle, engineOil, filters, transmission, technicalNotes, laborTimes, uncertainties, sources, liquiMolyProducts.
+Hauptfelder: schemaVersion, vehicle, engineOil, filters, transmission, technicalNotes, laborTimes, uncertainties, sources, liquiMolyProducts. engineOil enthält approval, viscosities, capacityWithFilterLiters, capacityMinLiters, capacityMaxLiters, capacityText und quantityAccessStatus.
 
 Filterfelder: oilFilter, airFilter, cabinFilter, fuelFilter. Jeder bevorzugte Treffer enthält manufacturer, partNumber, oeNumber, name, confidence und evidenceSourceIds. Weitere Kandidaten stehen im Array alternatives mit denselben Feldern.
 
 Getriebefelder: type, manufacturer, family, code, gears, oil, filter, oilPan, gasket, temperatureWindowC, changeMethod und notes. Die Sicherheit der Identifikation steht im Feld confidence.
 
-Getriebeölfelder: name, specification, approval, serviceFillLiters und dryFillLiters. serviceFillLiters ist die Ölwechselmenge beziehungsweise Servicefüllmenge, nicht die Gebindegröße eines Produkts.
+Getriebeölfelder: name, specification, approval, serviceFillLiters und quantityAccessStatus. serviceFillLiters ist ausschließlich die Servicebefüllung beziehungsweise Ölwechselmenge aus dem Abschnitt Füllmenge. Trockenfüllungen und Verkaufsgebinde nicht ausgeben.
 
 Richtzeiten: Für jede übergebene serviceId genau einen Eintrag mit serviceId, serviceName, minutes, confidence und note zurückgeben. Nicht gefundene Zeit als minutes null.
 

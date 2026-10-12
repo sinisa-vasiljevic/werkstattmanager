@@ -128,3 +128,18 @@ Version 4.3.41:
 - Die langen Pfade transmission.oil.serviceFillLiters und transmission.oil.dryFillLiters werden nicht mehr als zusammenhängende Zeichenfolgen ausgegeben.
 - Schemafelder serviceFillLiters und dryFillLiters bleiben unverändert verlangt und importkompatibel.
 - LIQUI-MOLY-Mengenlogik, erweiterte Motor-/Getrieberecherche und direkter ChatGPT-Ablauf bleiben erhalten.
+
+Version 4.3.42:
+- LIQUI-MOLY-Mengenrecherche als konkreten Navigations- und Ausleseablauf formuliert.
+- Produktkarten müssen bis zum Abschnitt Füllmenge geprüft werden; Trockenfüllung und Servicebefüllung werden getrennt übernommen.
+- Verkaufsgebinde bei Artikelnummern werden ausdrücklich von Fahrzeugfüllmengen getrennt.
+- Getriebe: Servicebefüllung -> serviceFillLiters, Trockenfüllung -> dryFillLiters.
+- Motor: Einzelwert -> capacityWithFilterLiters; Bereiche zusätzlich in capacityMinLiters, capacityMaxLiters und capacityText.
+- Dynamisch nicht lesbare LIQUI-MOLY-Seite darf nicht mehr fälschlich als fehlende Füllmenge bewertet werden.
+
+Version 4.3.43:
+- LIQUI-MOLY-Mengenlogik auf Servicebefüllung beziehungsweise Ölwechselmenge reduziert.
+- Trockenfüllungen werden nicht mehr recherchiert, ausgegeben, importiert oder als Materialbedarf verwendet.
+- Getriebe: ausschließlich serviceFillLiters.
+- Motor: Einzelwert in capacityWithFilterLiters; Mengenbereich zusätzlich in capacityMinLiters, capacityMaxLiters und capacityText.
+- Direkter ChatGPT-Ablauf, erweiterte Motor-/Getrieberecherche, Filter- und Kandidatenlogik unverändert erhalten.
