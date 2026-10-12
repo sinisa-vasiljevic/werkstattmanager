@@ -122,3 +122,9 @@ Version 4.3.40:
 - Kein about:blank, keine nachträgliche Weiterleitung und keine gekoppelte Kopieren-und-Öffnen-Funktion.
 - Beim Kopieren und Teilen wird aiPrompt unverändert übernommen.
 - Erweiterte Recherche aus 4.3.39 einschließlich Motor/Getriebe, Kandidaten, MANN-FILTER und LIQUI-MOLY-Mengenlogik unverändert erhalten.
+
+Version 4.3.41:
+- Letzte untrennbare Langbegriffe im sichtbaren Rechercheauftrag entfernt oder sprachlich getrennt.
+- Die langen Pfade transmission.oil.serviceFillLiters und transmission.oil.dryFillLiters werden nicht mehr als zusammenhängende Zeichenfolgen ausgegeben.
+- Schemafelder serviceFillLiters und dryFillLiters bleiben unverändert verlangt und importkompatibel.
+- LIQUI-MOLY-Mengenlogik, erweiterte Motor-/Getrieberecherche und direkter ChatGPT-Ablauf bleiben erhalten.
