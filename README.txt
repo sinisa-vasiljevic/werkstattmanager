@@ -1,4 +1,4 @@
-WERKSTATTMANAGER PWA 4.3.16
+WERKSTATTMANAGER PWA 4.3.19
 
 Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
@@ -9,7 +9,7 @@ Auf dem iPhone: Seite in Safari öffnen, Teilen, Zum Home-Bildschirm, Als Web-Ap
 Vor späteren Updates immer unter Optionen ein Backup exportieren.
 Die Materialimport_Vorlage.csv kann direkt als Vorlage für den Materialimport verwendet werden.
 
-Versionsanzeige im Header: WERKSTATTMANAGER v 4.3.16
+Versionsanzeige im Header: WERKSTATTMANAGER v 4.3.19
 
 Funktionsgeprüfte Wartungsversion 2.4.1: TÜV-Grenzen werden automatisch konsistent gehalten.
 
@@ -55,3 +55,5 @@ Version 4.3.16: Fahrzeug-Loeschfunktion unter Fahrzeugdetails und Fahrzeug bearb
 Version 4.3.17: TÜV-Grenzwerte dauerhaft abgesichert (Rot kleiner/gleich Gelb kleiner/gleich Gesamtzeitraum). Manifest wieder in das Release-Paket aufgenommen. Fahrzeug-Löschfunktion aus 4.3.16 unverändert erhalten.
 
 Version 4.3.18: Kundenlöschung mit Fahrzeug- und Historienprüfung; mobile Fahrzeugaktionen korrigiert.
+
+Version 4.3.19: Eigenstaendige Wartungsplan-Suche pro Fahrzeug. Nutzer waehlt drei aufsteigende Service-Kilometerstaende selbst; Herstellerintervalle werden nur als sichtbare Vorschlaege in Klammern gespeichert. Separater Rechercheauftrag und JSON-Pruefimport, fahrzeugbezogene Speicherung, Statusanzeige und Ersatz vorhandener Wartungsplaene erst nach Bestaetigung.
