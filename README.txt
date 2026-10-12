@@ -93,7 +93,9 @@ Version 4.3.34:
 - Vorhandene Absätze, Listen, Fahrzeugdaten und JSON-Einrückungen bleiben erhalten.
 - Rechercheinhalt und Suchlogik bleiben unverändert; nur die Textformatierung wurde angepasst.
 
-Version 4.3.35:
-- Rechercheauftrag wird jetzt bei maximal 22 Zeichen pro Zeile umgebrochen.
-- Umbruch ausschließlich an Wortgrenzen; einzelne lange Wörter, URLs und Teilenummern bleiben ungeteilt.
-- Inhalt, Reihenfolge und Recherchelogik unverändert.
+
+Version 4.3.36:
+- 22-Zeichen-Umbruch bleibt aktiv.
+- iOS-Teilen-Dialog zu ChatGPT entfernt, weil dessen eingebettete Webansicht überbreit bleibt.
+- Neuer Hauptablauf kopiert den Auftrag und öffnet ChatGPT separat.
+- In ChatGPT nur noch ins Eingabefeld tippen und Einfügen wählen.
