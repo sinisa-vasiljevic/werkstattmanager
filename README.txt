@@ -64,10 +64,9 @@ Version 4.3.29: Robuste Übernahme gefundener Filter aus unterschiedlichen KI-JS
 
 Version 4.3.29 Gesamtprüfung: fehlende Wartungsplan-Funktion repariert; fahrzeugspezifische Getriebeöl-/Filterzuordnung und manuelle Servicefüllmenge wiederhergestellt; alte globale Getriebematerialien quarantänisiert.
 
-Version 4.3.30 - Abschluss der Analyse- und Testschleife:
-- Familienfahrzeug vollständig im Fahrzeugformular, Filter, Kartenlabel und in der Kundenzuordnung wiederhergestellt.
-- Familienfahrzeuge erfordern einen Kontakt der Kundenkategorie Familie.
-- Kundenfahrzeuge zeigen nur reguläre Kunden, Familienfahrzeuge nur Familienkontakte.
-- KI-Recherche übergibt Getriebeart, Getriebefamilie, konkreten GKB, VIN, Motorcode und Baujahr ausdrücklich.
-- Getriebeöl-Spezifikation, Freigabe, Service-/Gesamtfüllmenge und Filter werden verbindlich angefordert.
-- Fahrzeugspezifische Materialzuordnung, MANN-FILTER-Priorität, manuelle Mengen und Wartungsplanung regressiongetestet.
+Korrektur Familienfahrzeug in Version 4.3.30:
+- Familienfahrzeug ist jetzt nativ im aktiven Fahrzeugformular auswählbar.
+- Auswahl wird als type=family gespeichert.
+- Familienfahrzeuge zeigen ausschließlich Kontakte der Kategorie Familie.
+- Kundenfahrzeuge zeigen ausschließlich reguläre Kunden.
+- Bestehende Familienfahrzeuge werden beim Bearbeiten wieder korrekt vorausgewählt.
