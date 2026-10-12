@@ -5,7 +5,7 @@
 .family{background:#ffd400;color:#111827}
 .customer-vehicle-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.customer-vehicle-actions .btn{width:100%;min-width:0;white-space:normal;padding:11px 8px}.customer-action-wide{grid-column:1/-1}.customer-vehicle-item{padding:14px 0;border-bottom:1px solid #e2e8f0}.customer-vehicle-item h3{margin:8px 0 2px;overflow-wrap:anywhere}@media(min-width:600px){.customer-vehicle-actions{grid-template-columns:repeat(3,minmax(0,1fr))}.customer-action-wide{grid-column:auto}}</style>
 <style id="bootSafetyStyle">#bootSafety{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:#eef2f7;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}#bootSafety .boot-card{width:min(520px,100%);background:#fff;border-radius:20px;padding:22px;box-shadow:0 12px 40px #0f172a22}#bootSafety h2{margin:0 0 8px}#bootSafety p{color:#475569}#bootSafety button{border:0;border-radius:12px;padding:11px 14px;font-weight:750;background:#0b63ce;color:#fff;margin:6px 6px 0 0}#bootSafety button.secondary{background:#e7edf5;color:#1e293b}#bootSafetyDetails{white-space:pre-wrap;overflow-wrap:anywhere;font:12px ui-monospace,monospace;color:#991b1b;background:#fee2e2;border-radius:10px;padding:10px;max-height:180px;overflow:auto}.app-ready #bootSafety{display:none}</style>
-</head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.22</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><div id="bootSafety" role="status" aria-live="polite"><div class="boot-card"><h2>Werkstattmanager wird gestartet</h2><p id="bootSafetyText">Lokale Daten und Offline-Speicher werden geprüft.</p><div id="bootSafetyActions" style="display:none"><button onclick="location.reload()">Erneut starten</button><button class="secondary" onclick="window.WM_copyStartError()">Fehler kopieren</button></div><pre id="bootSafetyDetails" style="display:none"></pre></div></div><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
+</head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.23</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><div id="bootSafety" role="status" aria-live="polite"><div class="boot-card"><h2>Werkstattmanager wird gestartet</h2><p id="bootSafetyText">Lokale Daten und Offline-Speicher werden geprüft.</p><div id="bootSafetyActions" style="display:none"><button onclick="location.reload()">Erneut starten</button><button class="secondary" onclick="window.WM_copyStartError()">Fehler kopieren</button></div><pre id="bootSafetyDetails" style="display:none"></pre></div></div><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
 <script>
 (function(){
   var firstError='';
@@ -17,7 +17,7 @@
     if(details){details.textContent=firstError;details.style.display='block'}
     if(actions)actions.style.display='block';
   };
-  window.WM_copyStartError=async function(){var value='Werkstattmanager 4.3.22\n'+firstError;try{await navigator.clipboard.writeText(value);alert('Fehlerdetails kopiert.')}catch(e){prompt('Fehlerdetails kopieren:',value)}};
+  window.WM_copyStartError=async function(){var value='Werkstattmanager 4.3.23\n'+firstError;try{await navigator.clipboard.writeText(value);alert('Fehlerdetails kopiert.')}catch(e){prompt('Fehlerdetails kopieren:',value)}};
   window.addEventListener('error',function(e){window.WM_showStartError(e.error||e.message)});
   window.addEventListener('unhandledrejection',function(e){window.WM_showStartError(e.reason)});
   window.WM_markReady=function(){document.documentElement.classList.add('app-ready')};
@@ -511,7 +511,7 @@ saveEntry=function(vid,eid=''){
   return result;
 };
 
-/* v4.3.22: Fahrzeug loeschen wiederhergestellt und abgesichert. */
+/* v4.3.23: Fahrzeug loeschen wiederhergestellt und abgesichert. */
 function deleteVehicle4316(vid){
   const v=vehicle(vid);
   if(!v)return alert('Fahrzeug wurde nicht gefunden.');
@@ -572,7 +572,7 @@ async function registerServiceWorker4315(){
 }
 
 
-/* v4.3.22 - konsolidierte Erweiterungen */
+/* v4.3.23 - konsolidierte Erweiterungen */
 function wm422VehicleLabel(v){return v?`${v.make||''} ${v.model||''}`.trim():'Fahrzeug gelöscht'}
 function wm422EntryTotal(e){return e.type==='own'?Number(e.ownCost||0):Number(e.total||0)}
 
@@ -625,7 +625,9 @@ function wm422ImportMaintenance(){try{const req=window.wm422Maintenance,x=extrac
 
 /* Wartungshistorie als direkte Vorschau und browserseitige PDF-/Druckausgabe. */
 function wm422HistoryHtml(vid,prices=false){const v=vehicle(vid),es=db.entries.filter(e=>e.vehicleId===vid).sort((a,b)=>(a.date||'').localeCompare(b.date||''));return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Wartungshistorie ${esc(v.make)} ${esc(v.model)}</title><style>body{font-family:Arial,sans-serif;margin:28px;color:#111}button{padding:12px 16px;margin-right:8px}.meta{color:#444;line-height:1.5}.entry{border-top:1px solid #aaa;padding:14px 0;break-inside:avoid}ul{margin:6px 0}@media print{button{display:none}body{margin:12mm}}</style></head><body><button onclick="window.print()">Drucken / als PDF sichern</button><h1>Wartungshistorie</h1><div class="meta"><b>${esc(v.make)} ${esc(v.model)} ${esc(v.series||'')}</b><br>Kennzeichen: ${esc(v.plate||'–')} · VIN: ${esc(v.vin||'–')}<br>Motor: ${esc(v.engine||'–')} · Motorcode: ${esc(v.engineCode||'–')}<br>Aktueller Kilometerstand: ${formatKm(v.mileage||0)} km · Erstzulassung: ${esc(v.firstRegistration||v.year||'–')}<br>Erstellt: ${new Date().toLocaleString('de-DE')}</div>${es.map(e=>`<section class="entry"><h3>${e.date?new Date(e.date+'T00:00:00').toLocaleDateString('de-DE'):'Ohne Datum'} · ${e.odometer?formatKm(e.odometer)+' km':'Kilometerstand fehlt'}</h3>${e.description?`<p><b>${esc(e.description)}</b></p>`:''}<ul>${(e.items||[]).map(i=>`<li>${esc(i.name||service(i.serviceId)?.name||'Leistung')}</li>`).join('')}${(e.materials||[]).map(m=>`<li>${esc(m.name||'Material')} · ${m.quantity||''} ${esc(m.unit||'')}</li>`).join('')}</ul>${prices?`<p><b>Gesamt: ${euro(wm422EntryTotal(e))}</b></p>`:''}</section>`).join('')||'<p>Noch keine Wartungseinträge vorhanden.</p>'}</body></html>`}
-function wm422PreviewHistory(vid){const prices=confirm('Preise und Kosten in der Wartungshistorie anzeigen?');const w=window.open('','_blank');if(!w)return alert('Popup wurde blockiert. Bitte Popups erlauben.');w.document.open();w.document.write(wm422HistoryHtml(vid,prices));w.document.close()}
+function wm422PreviewHistory(vid){const prices=confirm('Preise und Kosten in der Wartungshistorie anzeigen?');const html=wm422HistoryHtml(vid,prices).replace('<button onclick="window.print()">Drucken / als PDF sichern</button>','');window.wm423HistoryHtml=html;showModal('Wartungshistorie',`<div class="notice"><b>Vorschau innerhalb der App</b><br>Mit „Drucken / PDF“ öffnet sich die iPhone-Druckansicht. Über das Teilen-Symbol kann die Vorschau anschließend als PDF in „Dateien“ gesichert oder versendet werden.</div><div class="grid g2"><button class="btn primary" onclick="wm423PrintHistory()">Drucken / PDF</button><button class="btn" onclick="wm423ShareHistory()">Teilen</button></div><iframe id="wm423HistoryFrame" title="Wartungshistorie" style="width:100%;height:62vh;border:1px solid #dbe2ea;border-radius:12px;background:#fff;margin-top:10px"></iframe><button class="btn" style="width:100%;margin-top:10px" onclick="closeModal()">Zurück zum Fahrzeug</button>`);const frame=document.getElementById('wm423HistoryFrame');frame.srcdoc=html}
+function wm423PrintHistory(){const frame=document.getElementById('wm423HistoryFrame');if(!frame?.contentWindow)return alert('Die Vorschau ist noch nicht geladen.');try{frame.contentWindow.focus();frame.contentWindow.print()}catch(e){alert('Die Druckansicht konnte nicht geöffnet werden. Bitte „Teilen“ verwenden.') }}
+async function wm423ShareHistory(){try{const html=window.wm423HistoryHtml;if(!html)throw Error('Keine Wartungshistorie geöffnet.');const file=new File([html],`Wartungshistorie_${todayISO()}.html`,{type:'text/html'});if(navigator.canShare?.({files:[file]})){await navigator.share({title:'Wartungshistorie',files:[file]});return}downloadFile(file.name,html,'text/html;charset=utf-8')}catch(e){if(e.name!=='AbortError')alert('Teilen nicht möglich: '+e.message)}}
 
 /* Fahrzeugdetails konsolidiert erweitern. */
 const wm422VehicleDetailsBase=vehicleDetails;

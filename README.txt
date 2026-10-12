@@ -1,4 +1,4 @@
-WERKSTATTMANAGER PWA 4.3.22
+WERKSTATTMANAGER PWA 4.3.23
 
 Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
@@ -9,7 +9,7 @@ Auf dem iPhone: Seite in Safari öffnen, Teilen, Zum Home-Bildschirm, Als Web-Ap
 Vor späteren Updates immer unter Optionen ein Backup exportieren.
 Die Materialimport_Vorlage.csv kann direkt als Vorlage für den Materialimport verwendet werden.
 
-Versionsanzeige im Header: WERKSTATTMANAGER v 4.3.22
+Versionsanzeige im Header: WERKSTATTMANAGER v 4.3.23
 
 Funktionsgeprüfte Wartungsversion 2.4.1: TÜV-Grenzen werden automatisch konsistent gehalten.
 
@@ -57,7 +57,7 @@ Version 4.3.17: TÜV-Grenzwerte dauerhaft abgesichert (Rot kleiner/gleich Gelb k
 Version 4.3.18: Kundenlöschung mit Fahrzeug- und Historienprüfung; mobile Fahrzeugaktionen korrigiert.
 
 
-Version 4.3.22 (konsolidiert):
+Version 4.3.23 (konsolidiert):
 - Direkte Fahrzeugauswahl bei Leistung/Kosten repariert; presetVid bleibt erhalten.
 - Aufträge ohne vorhandenes Fahrzeug bleiben mit Datum, km, Leistungen, Materialien und Betrag sichtbar und löschbar.
 - Datum und Kilometerstand sind bei eigenen und Kundenaufträgen editierbar.
@@ -67,4 +67,6 @@ Version 4.3.22 (konsolidiert):
 - Wartungshistorie als Druck-/PDF-Vorschau, optional mit Preisen.
 - Materialien aus gespeicherten KI-Daten anlegen und fest dem Fahrzeug zuordnen.
 - Fahrzeuggebundene Materialien anderer Fahrzeuge werden im Auftrag ausgeblendet.
-- Manifest ergänzt, Icons eingebunden, Cache auf 4.3.22 angehoben und Offline-Text korrigiert.
+- Manifest ergänzt, Icons eingebunden, Cache auf 4.3.23 angehoben und Offline-Text korrigiert.
+
+Version 4.3.23: Wartungshistorie wird innerhalb der App in einer Vorschau geöffnet. Eigener Zurück-Button, iOS-tauglicher Druckaufruf über das Vorschaufenster und Teilen/Download als HTML ergänzt.
