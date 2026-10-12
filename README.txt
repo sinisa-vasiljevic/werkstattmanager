@@ -99,3 +99,20 @@ Version 4.3.36:
 - iOS-Teilen-Dialog zu ChatGPT entfernt, weil dessen eingebettete Webansicht überbreit bleibt.
 - Neuer Hauptablauf kopiert den Auftrag und öffnet ChatGPT separat.
 - In ChatGPT nur noch ins Eingabefeld tippen und Einfügen wählen.
+
+Version 4.3.37:
+- Tatsächliche Ursache der breiten ChatGPT-Eingabe beseitigt: Der bisherige große JSON-Schemablock enthielt untrennbare Schlüsselzeilen und wurde trotz 22-Zeichen-Umbruch nicht getrennt.
+- Der Rechercheauftrag enthält keinen ausgeschriebenen JSON-Musterblock mehr.
+- Erwartete JSON-Felder werden einzeln aufgeführt; dadurch keine künstlich breite Eingabezeile.
+- Die zuvor getriebelastige Recherche wurde wieder um vollständige Motor-, Öl-, Filter- und Fahrzeugidentifikation ergänzt.
+- VIN, HSN/TSN, Motorcode, Bauzeit, Filterregeln, MANN-FILTER, Motoröl, Getriebe und alle Leistungen bleiben enthalten.
+
+Version 4.3.38:
+- Motor und Getriebe werden gleichwertig recherchiert.
+- Pro Materialart werden mehrere plausible Kandidaten verlangt.
+- Auswahl zuerst nach Fahrzeugpassung, Markenpraeferenz erst bei gleich guter Passung.
+- Filter: MANN-FILTER bevorzugt; sonst MAHLE/KNECHT, Hengst, Bosch, Purflux, UFI oder anderer namhafter Hersteller.
+- Oele: zuerst Spezifikation und OEM-Freigabe; danach mehrere Produkte namhafter Hersteller.
+- Eine belastbare Quelle ergibt medium, zwei passende Quellen high; widerspruechliche Treffer bleiben als low mit Erklaerung.
+- null nur, wenn kein technisch plausibler Kandidat existiert.
+- Bevorzugter Treffer bleibt in direkten Feldern, weitere Treffer stehen unter alternatives.
