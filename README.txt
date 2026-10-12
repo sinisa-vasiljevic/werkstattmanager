@@ -114,3 +114,11 @@ Version 4.3.39:
 - LIQUI-MOLY-Getriebe-Ölwechselmenge muss in transmission.oil.serviceFillLiters, Gesamtfüllmenge in dryFillLiters.
 - Eine eindeutige fahrzeugspezifische LIQUI-MOLY-Angabe reicht für confidence medium und benötigt keine zweite Quelle.
 - Produkt-Gebindegröße darf nicht als Fahrzeug-Füllmenge verwendet werden.
+
+Version 4.3.40:
+- Früheren direkten ChatGPT-Ablauf wiederhergestellt.
+- Rechercheauftrag kopieren, teilen und ChatGPT öffnen sind wieder getrennte Aktionen.
+- ChatGPT wird direkt mit https://chatgpt.com geöffnet.
+- Kein about:blank, keine nachträgliche Weiterleitung und keine gekoppelte Kopieren-und-Öffnen-Funktion.
+- Beim Kopieren und Teilen wird aiPrompt unverändert übernommen.
+- Erweiterte Recherche aus 4.3.39 einschließlich Motor/Getriebe, Kandidaten, MANN-FILTER und LIQUI-MOLY-Mengenlogik unverändert erhalten.
