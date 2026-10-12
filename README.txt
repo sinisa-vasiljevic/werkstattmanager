@@ -75,3 +75,9 @@ Version 4.3.31 Abschlusskorrektur:
 - Drei Fahrzeugarten bleiben unverändert vorhanden und funktional.
 - Nur die sichtbaren Beschriftungen wurden mit festen, kontrollierten Zeilenumbrüchen versehen.
 - Keine Änderung an Auswahl-, Speicher-, Filter-, Kunden- oder Fahrzeuglogik.
+
+Version 4.3.32:
+- Grundlage ist ausschließlich der zuletzt hochgeladene Stand 4.3.31.
+- Fahrzeugkarten unterscheiden jetzt direkt nach vehicle.type: own, family und customer.
+- Familienfahrzeuge erhalten die gelbe Klasse family und den Text Familienfahrzeug.
+- Filter-, Auswahl- und Speicherlogik wurden nicht verändert.

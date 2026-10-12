@@ -10,7 +10,7 @@
 @media (min-width:430px){.vehicle-type-btn{font-size:15px;padding:10px 6px}}
 </style>
 <style id="bootSafetyStyle">#bootSafety{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:#eef2f7;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}#bootSafety .boot-card{width:min(520px,100%);background:#fff;border-radius:20px;padding:22px;box-shadow:0 12px 40px #0f172a22}#bootSafety h2{margin:0 0 8px}#bootSafety p{color:#475569}#bootSafety button{border:0;border-radius:12px;padding:11px 14px;font-weight:750;background:#0b63ce;color:#fff;margin:6px 6px 0 0}#bootSafety button.secondary{background:#e7edf5;color:#1e293b}#bootSafetyDetails{white-space:pre-wrap;overflow-wrap:anywhere;font:12px ui-monospace,monospace;color:#991b1b;background:#fee2e2;border-radius:10px;padding:10px;max-height:180px;overflow:auto}.app-ready #bootSafety{display:none}</style>
-</head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.31</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><div id="bootSafety" role="status" aria-live="polite"><div class="boot-card"><h2>Werkstattmanager wird gestartet</h2><p id="bootSafetyText">Lokale Daten und Offline-Speicher werden geprüft.</p><div id="bootSafetyActions" style="display:none"><button onclick="location.reload()">Erneut starten</button><button class="secondary" onclick="window.WM_copyStartError()">Fehler kopieren</button></div><pre id="bootSafetyDetails" style="display:none"></pre></div></div><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
+</head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.32</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><div id="bootSafety" role="status" aria-live="polite"><div class="boot-card"><h2>Werkstattmanager wird gestartet</h2><p id="bootSafetyText">Lokale Daten und Offline-Speicher werden geprüft.</p><div id="bootSafetyActions" style="display:none"><button onclick="location.reload()">Erneut starten</button><button class="secondary" onclick="window.WM_copyStartError()">Fehler kopieren</button></div><pre id="bootSafetyDetails" style="display:none"></pre></div></div><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
 <script>
 (function(){
   var firstError='';
@@ -22,7 +22,7 @@
     if(details){details.textContent=firstError;details.style.display='block'}
     if(actions)actions.style.display='block';
   };
-  window.WM_copyStartError=async function(){var value='Werkstattmanager 4.3.31\n'+firstError;try{await navigator.clipboard.writeText(value);alert('Fehlerdetails kopiert.')}catch(e){prompt('Fehlerdetails kopieren:',value)}};
+  window.WM_copyStartError=async function(){var value='Werkstattmanager 4.3.32\n'+firstError;try{await navigator.clipboard.writeText(value);alert('Fehlerdetails kopiert.')}catch(e){prompt('Fehlerdetails kopieren:',value)}};
   window.addEventListener('error',function(e){window.WM_showStartError(e.error||e.message)});
   window.addEventListener('unhandledrejection',function(e){window.WM_showStartError(e.reason)});
   window.WM_markReady=function(){document.documentElement.classList.add('app-ready')};
@@ -666,6 +666,20 @@ if(typeof wm422OpenMaintenance!=='function'){window.wm422OpenMaintenance=functio
 /* v4.3.31 Familienfahrzeug: native Auswahl und mobile Textdarstellung */
 const v431EditVehicleBase=editVehicle;
 editVehicle=function(vid='',presetCustomerId=''){v431EditVehicleBase(vid,presetCustomerId);const v=db.vehicles.find(x=>x.id===vid)||{type:'customer',customerId:presetCustomerId};setVehicleType(v.type||'customer');const sel=document.getElementById('vcustomer');if(sel&&v.customerId&&[...sel.options].some(o=>o.value===v.customerId))sel.value=v.customerId};
+
+
+/* v4.3.32: Fahrzeugtyp in allen aktiven Fahrzeugkarten dreistufig darstellen */
+function vehicleTypePresentation(v){
+ if(v?.type==='own')return {cssClass:'own',label:'Eigenes Fahrzeug'};
+ if(v?.type==='family')return {cssClass:'family',label:'Familienfahrzeug'};
+ return {cssClass:'cust',label:'Kundenfahrzeug'};
+}
+getVehicleBadge=function(v){return vehicleTypePresentation(v)};
+vehiclesPage=function(){
+ const list=(db.vehicles||[]).filter(v=>vehicleFilter==='all'||v.type===vehicleFilter);
+ const cards=list.map(v=>{const badge=vehicleTypePresentation(v);return `<div class="card searchable"><span class="pill ${badge.cssClass}">${badge.label}</span><h3 style="font-size:22px;margin:8px 0">${esc(v.make)} ${esc(v.model)} ${esc(v.series||'')}</h3><div class="muted">${esc(v.plate||'Ohne Kennzeichen')} · ${formatKm(v.mileage||0)} km</div><button class="btn primary" style="width:100%;margin-top:14px" onclick="hOpen('${v.id}')">Fahrzeugzentrale öffnen</button></div>`}).join('');
+ return `<div class="section-title"><h2>Fahrzeuge</h2><button class="btn primary" onclick="editVehicle()">＋ Fahrzeug</button></div><div class="grid g3" style="margin-bottom:12px">${[['all','Alle'],['own','Eigene'],['family','Familie'],['customer','Kunden-Fzg.']].map(x=>`<button class="btn ${vehicleFilter===x[0]?'primary':''}" onclick="vehicleFilter='${x[0]}';render()">${x[1]}</button>`).join('')}</div><input class="search" placeholder="Fahrzeug suchen" oninput="filterCards(this.value)"><div id="cardlist" class="grid">${cards||'<div class="card muted">Noch keine Fahrzeuge.</div>'}</div>`;
+};
 
 try{render();window.WM_markReady?.()}catch(err){console.error('Startfehler:',err);window.WM_showStartError?.(err)}
 window.addEventListener('load',registerServiceWorker4315);
