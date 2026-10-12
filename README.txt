@@ -64,8 +64,14 @@ Version 4.3.29: Robuste Übernahme gefundener Filter aus unterschiedlichen KI-JS
 
 Version 4.3.29 Gesamtprüfung: fehlende Wartungsplan-Funktion repariert; fahrzeugspezifische Getriebeöl-/Filterzuordnung und manuelle Servicefüllmenge wiederhergestellt; alte globale Getriebematerialien quarantänisiert.
 
-Textdarstellung Fahrzeugart, Version 4.3.30:
-- Drei Schaltflächen bleiben nebeneinander.
-- Beschriftungen dürfen innerhalb der Schaltflächen umbrechen.
-- Schriftgröße und Innenabstand wurden mobil reduziert.
-- Keine Änderung an Auswahl-, Speicher- oder Fahrzeuglogik.
+Version 4.3.31:
+- Familienfahrzeug als dritte Fahrzeugart fest im aktiven Fahrzeugformular eingebaut.
+- Auswahl und Speicherung als type=family.
+- Familienkontakte und reguläre Kunden getrennt gefiltert.
+- Drei Schaltflächen bleiben nebeneinander; Beschriftungen dürfen umbrechen und werden nicht abgeschnitten.
+
+Version 4.3.31 Abschlusskorrektur:
+- Ausgangspunkt ist ausschließlich der hochgeladene 4.3.31-Stand.
+- Drei Fahrzeugarten bleiben unverändert vorhanden und funktional.
+- Nur die sichtbaren Beschriftungen wurden mit festen, kontrollierten Zeilenumbrüchen versehen.
+- Keine Änderung an Auswahl-, Speicher-, Filter-, Kunden- oder Fahrzeuglogik.

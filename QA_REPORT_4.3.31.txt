@@ -1,0 +1,21 @@
+Werkstattmanager 4.3.31 - Volltestbericht
+
+- PASS: JavaScript-Syntax aller Scriptblöcke
+- PASS: Inline-Handler und Funktionsreferenzen
+- PASS: Hauptseiten, CRUD-, Backup-, Wartungs-, PDF-, Dokument- und KI-Pfade
+- PASS: Drei Fahrzeugarten, Familienfahrzeug und kontrollierter Textumbruch
+- PASS: Versions- und Service-Worker-Konsistenz
+- PASS: Manifest, JSON, CSV, Icons und Offline-Dateiverweise
+
+Zusätzlich ausführbar geprüft:
+- Familienfahrzeug/Kundenfahrzeug/eigenes Fahrzeug umschalten
+- Kontaktfilter Familie gegen regulären Kunden
+- Kunden-/Familienrabatt ausschließlich auf Arbeitskosten
+- Rabattbegrenzung und Schutz gegen negative Beträge
+- MANN-FILTER-Priorisierung und verschiedene KI-JSON-Strukturen
+- fahrzeugspezifische Getriebematerialbindung
+- manuelle Füllmenge bleibt bei erneuter Recherche erhalten
+- unbekannte Füllmenge erzeugt keinen 1-Liter-Rückfallwert
+
+Grenzen:
+- Safari/iOS-Systemdialoge, PWA-Installation, Teilen/Drucken und externe KI-/Katalogantworten können in dieser Linux-Testumgebung nicht real ausgeführt werden. Die zugehörigen Codepfade und Referenzen wurden geprüft.
