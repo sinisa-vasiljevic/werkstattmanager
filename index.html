@@ -10,7 +10,7 @@
 @media (min-width:430px){.vehicle-type-btn{font-size:15px;padding:10px 6px}}
 </style>
 <style id="bootSafetyStyle">#bootSafety{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:#eef2f7;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}#bootSafety .boot-card{width:min(520px,100%);background:#fff;border-radius:20px;padding:22px;box-shadow:0 12px 40px #0f172a22}#bootSafety h2{margin:0 0 8px}#bootSafety p{color:#475569}#bootSafety button{border:0;border-radius:12px;padding:11px 14px;font-weight:750;background:#0b63ce;color:#fff;margin:6px 6px 0 0}#bootSafety button.secondary{background:#e7edf5;color:#1e293b}#bootSafetyDetails{white-space:pre-wrap;overflow-wrap:anywhere;font:12px ui-monospace,monospace;color:#991b1b;background:#fee2e2;border-radius:10px;padding:10px;max-height:180px;overflow:auto}.app-ready #bootSafety{display:none}</style>
-</head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.38</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><div id="bootSafety" role="status" aria-live="polite"><div class="boot-card"><h2>Werkstattmanager wird gestartet</h2><p id="bootSafetyText">Lokale Daten und Offline-Speicher werden geprüft.</p><div id="bootSafetyActions" style="display:none"><button onclick="location.reload()">Erneut starten</button><button class="secondary" onclick="window.WM_copyStartError()">Fehler kopieren</button></div><pre id="bootSafetyDetails" style="display:none"></pre></div></div><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
+</head><body><header><div><div style="display:flex;align-items:baseline;gap:7px;white-space:nowrap"><small>WERKSTATTMANAGER</small><span style="font-size:10px;font-weight:700;color:#fff;letter-spacing:.04em">v 4.3.39</span></div><h1 id="companyTitle">Meine Werkstatt</h1></div><button class="btn primary" onclick="openQuick()">＋ Neu</button></header><div id="bootSafety" role="status" aria-live="polite"><div class="boot-card"><h2>Werkstattmanager wird gestartet</h2><p id="bootSafetyText">Lokale Daten und Offline-Speicher werden geprüft.</p><div id="bootSafetyActions" style="display:none"><button onclick="location.reload()">Erneut starten</button><button class="secondary" onclick="window.WM_copyStartError()">Fehler kopieren</button></div><pre id="bootSafetyDetails" style="display:none"></pre></div></div><main class="wrap" id="app"></main><nav class="tabs" id="tabs"></nav><div id="modal"></div>
 <script>
 (function(){
   var firstError='';
@@ -22,7 +22,7 @@
     if(details){details.textContent=firstError;details.style.display='block'}
     if(actions)actions.style.display='block';
   };
-  window.WM_copyStartError=async function(){var value='Werkstattmanager 4.3.38\n'+firstError;try{await navigator.clipboard.writeText(value);alert('Fehlerdetails kopiert.')}catch(e){prompt('Fehlerdetails kopieren:',value)}};
+  window.WM_copyStartError=async function(){var value='Werkstattmanager 4.3.39\n'+firstError;try{await navigator.clipboard.writeText(value);alert('Fehlerdetails kopiert.')}catch(e){prompt('Fehlerdetails kopieren:',value)}};
   window.addEventListener('error',function(e){window.WM_showStartError(e.error||e.message)});
   window.addEventListener('unhandledrejection',function(e){window.WM_showStartError(e.reason)});
   window.WM_markReady=function(){document.documentElement.classList.add('app-ready')};
@@ -769,24 +769,12 @@ buildAiResearchPrompt=function(vid){
   'MANN-FILTER-Kataloge',
   'und serioese',
   'Teilekataloge.',
-  'Suche je Materialart',
-  'mehrere plausible',
-  'Kandidaten.',
-  'Bewerte jeden Treffer',
-  'nach Fahrzeugpassung.',
-  'Eine belastbare Quelle',
-  'ergibt confidence',
-  'medium.',
-  'Zwei passende Quellen',
-  'ergeben confidence',
-  'high.',
-  'Widersprueche ergeben',
-  'confidence low plus',
-  'Erklaerung.',
+  'Pruefe jeden Treffer',
+  'mit einer zweiten',
+  'fahrzeugspezifischen',
+  'Quelle.',
   'Nichts erfinden.',
-  'null nur wenn kein',
-  'technisch plausibler',
-  'Kandidat existiert.',
+  'Bei Unsicherheit null.',
   '',
   'FAHRZEUG',
   prompt437Field('Hersteller',v.make),
@@ -829,27 +817,16 @@ buildAiResearchPrompt=function(vid){
   '20 Praxis-Richtzeiten',
   '',
   'FILTERREGELN',
-  'Mehrere passende',
-  'Teilenummern suchen.',
+  'Nur exakt passende',
+  'Teilenummern nutzen.',
   'Motorcode, Bauzeit,',
   'VIN, HSN/TSN und',
   'Ausstattung beachten.',
-  'Zuerst Passgenauigkeit',
-  'bewerten, dann Marke.',
-  'Bei gleich guter',
-  'Passung MANN-FILTER',
+  'MANN-FILTER bei',
+  'eindeutigem Treffer',
   'bevorzugen.',
-  'Falls nicht verfuegbar:',
-  'MAHLE/KNECHT, Hengst,',
-  'Bosch, Purflux, UFI',
-  'oder anderer',
-  'namhafter Hersteller.',
-  'Treffer aus aehnlichen',
-  'Varianten als low',
-  'confidence behalten,',
-  'wenn Motor/Getriebe,',
-  'Bauzeit und Masse',
-  'plausibel passen.',
+  'Aehnliche Modelle',
+  'reichen nicht aus.',
   '',
   'GETRIEBEREGELN',
   'Familie und konkreten',
@@ -857,14 +834,9 @@ buildAiResearchPrompt=function(vid){
   'Service- und',
   'Trockenfuellmenge',
   'getrennt angeben.',
-  'Auch plausible',
-  'Alternativen nennen.',
-  'Abweichungen und',
-  'fehlende Nachweise',
-  'klar kennzeichnen.',
-  'Nur technisch',
-  'unplausible Treffer',
-  'verwerfen.',
+  'Ohne eindeutige',
+  'Zuordnung keine Teile',
+  'oder Mengen erfinden.',
   '',
   'LEISTUNGEN',
   prompt437Services(),
@@ -901,27 +873,6 @@ buildAiResearchPrompt=function(vid){
   'viscosities',
   'capacityWithFilterLiters',
   '',
-  'KANDIDATENFORMAT',
-  'Jede Materialart hat',
-  'einen bevorzugten',
-  'Treffer in den direkten',
-  'Feldern und zusaetzlich',
-  'alternatives als Array.',
-  'Bevorzugter Treffer:',
-  'beste Fahrzeugpassung.',
-  'Markenpraeferenz nur',
-  'bei gleicher Passung.',
-  '',
-  'OELREGELN',
-  'Zuerst Spezifikation',
-  'und OEM-Freigabe.',
-  'Danach Produkte von',
-  'namhaften Herstellern',
-  'als preferred plus',
-  'alternatives nennen.',
-  'Nicht auf eine Marke',
-  'beschraenken.',
-  '',
   'filters-Felder',
   'oilFilter',
   'airFilter',
@@ -934,7 +885,6 @@ buildAiResearchPrompt=function(vid){
   'name',
   'confidence',
   'evidenceSourceIds',
-  'alternatives',
   '',
   'transmission-Felder',
   'type',
@@ -980,6 +930,74 @@ buildAiResearchPrompt=function(vid){
   'recommendation',
   'source'
  ].join('\n');
+};
+
+
+/* v4.3.39: kompakter Rechercheauftrag, Motor/Getriebe gleichwertig, LIQUI-MOLY-Mengenlogik */
+buildAiResearchPrompt=function(vid){
+ window.activeAiVehicleId=vid;
+ const v=vehicle(vid),t=transmissionData(v);
+ const services=(db.services||[]).map(x=>({
+  serviceId:String(x.id||''),
+  category:db.categories.find(c=>c.id===x.categoryId)?.name||'',
+  serviceName:x.name||'',
+  currentFallbackMinutes:getVehicleLaborMinutes(v,x)
+ }));
+ return `AUFGABE
+Recherchiere Motor und Getriebe des folgenden Fahrzeugs gleichwertig. Suche mehrere technisch plausible Kandidaten und bewerte zuerst die Fahrzeugpassung. Nichts erfinden. Verwende null nur, wenn kein technisch plausibler Kandidat existiert.
+
+FAHRZEUG
+Hersteller: ${v.make||'nicht angegeben'}
+Modell: ${v.model||'nicht angegeben'}
+Baureihe: ${v.series||'nicht angegeben'}
+Baujahr: ${v.year||'nicht angegeben'}
+Erstzulassung: ${v.firstRegistration||'nicht angegeben'}
+Motor: ${v.engine||'nicht angegeben'}
+Motorcode: ${v.engineCode||'nicht angegeben'}
+Leistung kW: ${v.powerKw||'nicht angegeben'}
+Leistung PS: ${v.powerPs||'nicht angegeben'}
+Kraftstoff: ${v.fuel||'nicht angegeben'}
+VIN: ${v.vin||'nicht angegeben'}
+HSN: ${v.hsn||'nicht angegeben'}
+TSN: ${v.tsn||'nicht angegeben'}
+Getriebeart: ${t.type||'nicht angegeben'}
+Getriebefamilie: ${t.family||'nicht angegeben'}
+Getriebecode: ${t.code||'nicht angegeben'}
+
+MOTOR
+Ermittle Motorcode und Motorfamilie, Motoröl-Spezifikation, OEM-Freigabe, geeignete Viskositäten, Ölwechselmenge mit Filter sowie Ölfilter, Luftfilter, Innenraumfilter und Kraftstofffilter.
+
+GETRIEBE
+Ermittle Getriebeart, Hersteller, Getriebefamilie und konkreten Getriebecode. Ermittle Getriebeöl-Spezifikation, OEM-Freigabe, Ölwechselmenge beziehungsweise Servicefüllmenge, Gesamt- beziehungsweise Trockenfüllmenge, Getriebeölfilter, Ölwanne, Dichtung, Temperaturfenster und Wechselmethode.
+
+LIQUI MOLY VERPFLICHTEND PRÜFEN
+Prüfe den LIQUI MOLY Ölwegweiser für Motor und Getriebe anhand aller vorhandenen Fahrzeugdaten. Übernimm die dort angegebene Ölwechselmenge des Getriebes in transmission.oil.serviceFillLiters. Übernimm eine angegebene Gesamtfüllmenge in transmission.oil.dryFillLiters. Verlange für die LIQUI-MOLY-Ölwechselmenge keine zweite Quelle. Eine eindeutige fahrzeugspezifische LIQUI-MOLY-Angabe reicht für confidence medium. Nenne die LIQUI-MOLY-Seite als Quelle. Falls mehrere Getriebevarianten möglich sind, gib jede plausible Variante mit eigener Ölwechselmenge als Alternative aus und erkläre die Zuordnung. Produkt-Gebindegröße niemals als Füllmenge verwenden.
+
+KANDIDATEN UND MARKEN
+Gib für Motoröl, Getriebeöl und jede Filterart einen bevorzugten Treffer sowie plausible Alternativen aus. Bewerte zuerst die Fahrzeugpassung, danach die Marke. Bei gleich guter Filterpassung MANN-FILTER bevorzugen. Falls kein passender MANN-FILTER verfügbar ist, MAHLE/KNECHT, Hengst, Bosch, Purflux, UFI oder einen anderen namhaften Hersteller verwenden. Bei Ölen entscheiden zuerst Spezifikation und OEM-Freigabe; danach Produkte namhafter Hersteller. Treffer mit confidence high, medium oder low nicht unterdrücken, sondern kurz begründen.
+
+QUELLENBEWERTUNG
+Eine belastbare fahrzeugspezifische Quelle ergibt mindestens confidence medium. Zwei übereinstimmende Quellen ergeben high. Widersprüchliche oder nur über eine plausible Aggregatvariante zugeordnete Treffer bleiben als low mit Erklärung erhalten. Nur technisch unplausible Treffer verwerfen.
+
+LEISTUNGEN
+${services.map(x=>`serviceId: ${x.serviceId}\nKategorie: ${x.category}\nLeistung: ${x.serviceName}\nBisher: ${x.currentFallbackMinutes} Minuten`).join('\n\n')}
+
+ANTWORTFORMAT
+Antworte nur mit gültigem JSON, ohne Markdown und ohne Begleittext. schemaVersion ist 1.
+
+Hauptfelder: schemaVersion, vehicle, engineOil, filters, transmission, technicalNotes, laborTimes, uncertainties, sources, liquiMolyProducts.
+
+Filterfelder: oilFilter, airFilter, cabinFilter, fuelFilter. Jeder bevorzugte Treffer enthält manufacturer, partNumber, oeNumber, name, confidence und evidenceSourceIds. Weitere Kandidaten stehen im Array alternatives mit denselben Feldern.
+
+Getriebefelder: type, manufacturer, family, code, gears, identificationConfidence, oil, filter, oilPan, gasket, temperatureWindowC, changeMethod und notes.
+
+Getriebeölfelder: name, specification, approval, serviceFillLiters und dryFillLiters. serviceFillLiters ist die Ölwechselmenge beziehungsweise Servicefüllmenge, nicht die Gebindegröße eines Produkts.
+
+Richtzeiten: Für jede übergebene serviceId genau einen Eintrag mit serviceId, serviceName, minutes, confidence und note zurückgeben. Nicht gefundene Zeit als minutes null.
+
+Quellen: Jede Quelle enthält title, url und usedFor.
+
+LIQUI-MOLY-Produkte: liquiMolyProducts enthält passende Produkte mit name, partNumber, approval, recommendation und source. Produktempfehlung und Füllmenge getrennt behandeln.`;
 };
 
 try{render();window.WM_markReady?.()}catch(err){console.error('Startfehler:',err);window.WM_showStartError?.(err)}

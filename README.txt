@@ -107,12 +107,10 @@ Version 4.3.37:
 - Die zuvor getriebelastige Recherche wurde wieder um vollständige Motor-, Öl-, Filter- und Fahrzeugidentifikation ergänzt.
 - VIN, HSN/TSN, Motorcode, Bauzeit, Filterregeln, MANN-FILTER, Motoröl, Getriebe und alle Leistungen bleiben enthalten.
 
-Version 4.3.38:
-- Motor und Getriebe werden gleichwertig recherchiert.
-- Pro Materialart werden mehrere plausible Kandidaten verlangt.
-- Auswahl zuerst nach Fahrzeugpassung, Markenpraeferenz erst bei gleich guter Passung.
-- Filter: MANN-FILTER bevorzugt; sonst MAHLE/KNECHT, Hengst, Bosch, Purflux, UFI oder anderer namhafter Hersteller.
-- Oele: zuerst Spezifikation und OEM-Freigabe; danach mehrere Produkte namhafter Hersteller.
-- Eine belastbare Quelle ergibt medium, zwei passende Quellen high; widerspruechliche Treffer bleiben als low mit Erklaerung.
-- null nur, wenn kein technisch plausibler Kandidat existiert.
-- Bevorzugter Treffer bleibt in direkten Feldern, weitere Treffer stehen unter alternatives.
+Version 4.3.39:
+- Harte 22-Zeichen-Zeilenumbrüche im finalen Rechercheauftrag entfernt; normaler Browserumbruch statt hunderter kurzer Zeilen.
+- Motor und Getriebe gleichwertig, mehrere plausible Kandidaten und Markenalternativen.
+- LIQUI MOLY Ölwegweiser für Motor und Getriebe verpflichtend.
+- LIQUI-MOLY-Getriebe-Ölwechselmenge muss in transmission.oil.serviceFillLiters, Gesamtfüllmenge in dryFillLiters.
+- Eine eindeutige fahrzeugspezifische LIQUI-MOLY-Angabe reicht für confidence medium und benötigt keine zweite Quelle.
+- Produkt-Gebindegröße darf nicht als Fahrzeug-Füllmenge verwendet werden.
