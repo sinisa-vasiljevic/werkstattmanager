@@ -1,4 +1,4 @@
-WERKSTATTMANAGER PWA 4.3.19
+WERKSTATTMANAGER PWA 4.3.22
 
 Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
@@ -9,7 +9,7 @@ Auf dem iPhone: Seite in Safari öffnen, Teilen, Zum Home-Bildschirm, Als Web-Ap
 Vor späteren Updates immer unter Optionen ein Backup exportieren.
 Die Materialimport_Vorlage.csv kann direkt als Vorlage für den Materialimport verwendet werden.
 
-Versionsanzeige im Header: WERKSTATTMANAGER v 4.3.19
+Versionsanzeige im Header: WERKSTATTMANAGER v 4.3.22
 
 Funktionsgeprüfte Wartungsversion 2.4.1: TÜV-Grenzen werden automatisch konsistent gehalten.
 
@@ -56,4 +56,15 @@ Version 4.3.17: TÜV-Grenzwerte dauerhaft abgesichert (Rot kleiner/gleich Gelb k
 
 Version 4.3.18: Kundenlöschung mit Fahrzeug- und Historienprüfung; mobile Fahrzeugaktionen korrigiert.
 
-Version 4.3.19: Eigenstaendige Wartungsplan-Suche pro Fahrzeug. Nutzer waehlt drei aufsteigende Service-Kilometerstaende selbst; Herstellerintervalle werden nur als sichtbare Vorschlaege in Klammern gespeichert. Separater Rechercheauftrag und JSON-Pruefimport, fahrzeugbezogene Speicherung, Statusanzeige und Ersatz vorhandener Wartungsplaene erst nach Bestaetigung.
+
+Version 4.3.22 (konsolidiert):
+- Direkte Fahrzeugauswahl bei Leistung/Kosten repariert; presetVid bleibt erhalten.
+- Aufträge ohne vorhandenes Fahrzeug bleiben mit Datum, km, Leistungen, Materialien und Betrag sichtbar und löschbar.
+- Datum und Kilometerstand sind bei eigenen und Kundenaufträgen editierbar.
+- Drei frei wählbare Wartungspläne mit eigener KI-Recherche und Herstellerhinweisen.
+- Rechnungen und Belege pro Auftrag lokal in IndexedDB speichern, ansehen und löschen.
+- Separates Dokumentbackup zum Export und Import.
+- Wartungshistorie als Druck-/PDF-Vorschau, optional mit Preisen.
+- Materialien aus gespeicherten KI-Daten anlegen und fest dem Fahrzeug zuordnen.
+- Fahrzeuggebundene Materialien anderer Fahrzeuge werden im Auftrag ausgeblendet.
+- Manifest ergänzt, Icons eingebunden, Cache auf 4.3.22 angehoben und Offline-Text korrigiert.
