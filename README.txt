@@ -81,3 +81,8 @@ Version 4.3.32:
 - Fahrzeugkarten unterscheiden jetzt direkt nach vehicle.type: own, family und customer.
 - Familienfahrzeuge erhalten die gelbe Klasse family und den Text Familienfahrzeug.
 - Filter-, Auswahl- und Speicherlogik wurden nicht verändert.
+
+
+Version 4.3.33:
+- Nur mobile Sichtbarkeit beim Kopieren/Teilen korrigiert.
+- Rechercheinhalt, Rechercheumfang und Antwortschema unverändert.
