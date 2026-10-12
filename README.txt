@@ -86,3 +86,14 @@ Version 4.3.32:
 Version 4.3.33:
 - Nur mobile Sichtbarkeit beim Kopieren/Teilen korrigiert.
 - Rechercheinhalt, Rechercheumfang und Antwortschema unverändert.
+
+Version 4.3.34:
+- Rechercheauftrag erhält vor Kopieren/Teilen echte Zeilenumbrüche bei maximal etwa 64 Zeichen.
+- Umbruch erfolgt an Wortgrenzen; Wörter, Teilenummern und URLs werden nicht zerrissen.
+- Vorhandene Absätze, Listen, Fahrzeugdaten und JSON-Einrückungen bleiben erhalten.
+- Rechercheinhalt und Suchlogik bleiben unverändert; nur die Textformatierung wurde angepasst.
+
+Version 4.3.35:
+- Rechercheauftrag wird jetzt bei maximal 22 Zeichen pro Zeile umgebrochen.
+- Umbruch ausschließlich an Wortgrenzen; einzelne lange Wörter, URLs und Teilenummern bleiben ungeteilt.
+- Inhalt, Reihenfolge und Recherchelogik unverändert.
