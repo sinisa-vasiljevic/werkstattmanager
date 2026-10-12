@@ -56,6 +56,6 @@ Version 4.3.17: TÜV-Grenzwerte dauerhaft abgesichert (Rot kleiner/gleich Gelb k
 
 Version 4.3.18: Kundenlöschung mit Fahrzeug- und Historienprüfung; mobile Fahrzeugaktionen korrigiert.
 
-Version 4.3.25: Echte PDF-Datei per Teilen/Drucken, VIN eigene Zeile, mobile Einspalten-Darstellung, Materialvorschau mit Einzelliste und strikte Getriebeöl-Sicherheitsprüfung. Getriebeöle werden niemals automatisch zugeordnet.
+Version 4.3.24: Echte PDF-Datei per Teilen/Drucken, VIN eigene Zeile, mobile Einspalten-Darstellung, Materialvorschau mit Einzelliste und strikte Getriebeöl-Sicherheitsprüfung. Getriebeöle werden niemals automatisch zugeordnet.
 
-Version 4.3.25: Vollständige Quarantäne aller Getriebematerialien. Fahrzeugzuordnungen, verifizierte IDs, Standardmengen und Pflichtmaterial-Verknüpfungen werden entfernt. Bereinigungsansicht für Einträge und Dubletten; historische Aufträge bleiben unverändert.
+Version 4.3.26: Fahrzeugzentrale mit Übersicht, Aufträgen, Wartung, Material, Dokumenten und Fahrzeugdaten.
