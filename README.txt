@@ -1,4 +1,4 @@
-WERKSTATTMANAGER PWA 4.3.44
+WERKSTATTMANAGER PWA 4.3.45
 
 Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
@@ -149,3 +149,11 @@ Version 4.3.44:
 - Drei frei wählbare, aufsteigende Service-Kilometerstände; eigener Rechercheauftrag, JSON-Prüfung und selektive Übernahme.
 - Fahrzeugzentrale, Aufträge, Materialsuche, Motor-/Getrieberecherche, Filterlogik und Dokumente unverändert gelassen.
 - PWA-Manifest ergänzt.
+
+Version 4.3.45:
+- Hauptnavigation auf Übersicht, Fahrzeuge, Kunden, Leistungen und Optionen reduziert.
+- Aufträge und Kosten bleiben vollständig erhalten und sind fahrzeugbezogen in der Fahrzeugzentrale gebündelt.
+- Neue zentrale Ansicht Historie / Kosten je Fahrzeug mit Summen, PDF-Historie, Auftrags- und Dokumentzugang.
+- Kunden-Fahrzeugaktionen führen zur Fahrzeugzentrale statt zu einem zweiten parallelen Auftragsweg.
+- Wartung, Material, Dokumente, Fahrzeugdaten und KI-Recherche bleiben unverändert verfügbar.
+- Cache und sichtbare Versionsnummer auf 4.3.45 erhöht.
