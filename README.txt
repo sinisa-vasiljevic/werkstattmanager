@@ -1,4 +1,4 @@
-WERKSTATTMANAGER PWA 4.3.16
+WERKSTATTMANAGER PWA 4.3.44
 
 Alle Dateien aus dem ZIP direkt in das Hauptverzeichnis des GitHub-Repositorys hochladen.
 
@@ -143,3 +143,9 @@ Version 4.3.43:
 - Getriebe: ausschließlich serviceFillLiters.
 - Motor: Einzelwert in capacityWithFilterLiters; Mengenbereich zusätzlich in capacityMinLiters, capacityMaxLiters und capacityText.
 - Direkter ChatGPT-Ablauf, erweiterte Motor-/Getrieberecherche, Filter- und Kandidatenlogik unverändert erhalten.
+
+Version 4.3.44:
+- Eigenständiger KI-Wartungsplan-Workflow aus Version 4.3.19 in die aktuelle 4.3.43-Basis übernommen.
+- Drei frei wählbare, aufsteigende Service-Kilometerstände; eigener Rechercheauftrag, JSON-Prüfung und selektive Übernahme.
+- Fahrzeugzentrale, Aufträge, Materialsuche, Motor-/Getrieberecherche, Filterlogik und Dokumente unverändert gelassen.
+- PWA-Manifest ergänzt.
